@@ -1,0 +1,23 @@
+html,body {
+}
+
+h1 {
+  text-align: center;
+}
+
+#directory-list {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+#directory-list li {
+  margin: 1.5rem auto;
+  font-weight: 700;
+  text-decoration: none;
+  text-decoration-color: black;
+}
+
+#directory-list a {
+  color: hsl(100, 19%, 18%);
+}
