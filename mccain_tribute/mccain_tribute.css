@@ -1,0 +1,47 @@
+body,html {
+  text-align: center;
+}
+
+#title {
+  margin-bottom: -.5em;
+}
+
+#title-div {
+  text-shadow: 1px 1px;
+  color: hsl(80, 43%, 30%);
+}
+
+#img-div {
+  max-width: 100%;
+}
+
+#image {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  padding: 2rem 2rem 9rem 2rem;
+  border-radius: .4em;
+  background-color: hsl(80, 43%, 80%);
+  border-color: hsl(260, 43%, 80%);
+  border-style: outset;
+  border-width: thick;
+}
+
+#img-caption {
+  font-style: italic;
+  position: relative;
+  top: -8rem;
+}
+
+#tribute-info {
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+  position: relative;
+  top: -4rem;
+}
+
+#link-div {
+  position: relative;
+  top: -2rem;
+}
