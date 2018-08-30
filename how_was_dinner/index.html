@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="how_was_dinner.css">
+  <title></title>
+</head>
+<body>
+  <div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </div>
+  <h1 id="title">How Was Dinner?</h1>
+  <div id="main">
+    <p id="description">Not that we care ... (Don't worry, we don't!).</p>
+    <form id="survey-form" name="survey-form">
+      <div id="name-div" class="form-div">
+        <label id="name-label" for="name" class="form-label">* Name:</label> <input id="name" class="form-input" type="text" maxlength="100" placeholder="Who did we call to dinner?" required="">
+      </div>
+      <div id="email-div" class="form-div">
+        <label id="email-label" for="email" class="form-label">* Email:</label> <input id="email" class="form-input" type="email" maxlength="100" placeholder="you ate that spam in a hurry tho" required="">
+      </div>
+      <div id="number-div" class="form-div">
+        <label id="number-label" for="number" class="form-label">* Size of Appetite in Miles:</label> <input id="number" class="form-input" type="number" min="1" max="11" placeholder="26.219, just kidding LOL!" required="">
+      </div>
+      <div id="relationship-div" class="form-div">
+        <label id="relationship-label" for="dropdown" class="form-label">What is your relationship to the food?</label> <select id="dropdown" class="form-input">
+          <option value="I ate it">
+            I ate it
+          </option>
+          <option value="I cooked it">
+            I cooked it
+          </option>
+          <option value="I married it">
+            I married it
+          </option>
+        </select>
+      </div><!-- the "name" attribute for the radio buttons is what groups them together -->
+      <div class="form-div">
+        <label class="form-label">What did you eat for desert?</label> <label class="form-input"><input type="radio" name="desert" value="icecream" checked> &nbsp;&nbsp;icecream<br>
+        <input type="radio" name="desert" value="cookies"> &nbsp;&nbsp;cookies<br>
+        <input type="radio" name="desert" value="cake"> &nbsp;&nbsp;cake<br>
+        <input type="radio" name="desert" value="pie"> &nbsp;&nbsp;pie</label>
+      </div>
+      <div class="form-div">
+        <label class="form-label">If you're so picky, then what DO you like?<br>
+        (Check all that apply):</label>
+        <div class="form-input">
+          <input type="checkbox" name="bacon1" value="Bacon"> &nbsp;&nbsp;<strong>I like bacon.</strong><br>
+          <input type="checkbox" name="bacon2" value="Bacon"> &nbsp;&nbsp;<strong>I like bacon.</strong><br>
+          <input type="checkbox" name="bacon3" value="Bacon"> &nbsp;&nbsp;<strong>I like bacon.</strong><br>
+          <input type="checkbox" name="bacon4" value="Bacon"> &nbsp;&nbsp;<strong>I like bacon.</strong><br>
+          <input type="checkbox" name="bacon5" value="Bacon"> &nbsp;&nbsp;<strong>I like bacon.</strong><br>
+          <input type="checkbox" name="bacon6" value="Bacon" checked> &nbsp;&nbsp;<strong>I like bacon.</strong><br>
+        </div>
+      </div>
+      <div class="form-div">
+        <p class="form-label"><strong>Please explain why canned sardines are the best snack food.</strong></p>
+        <textarea class="form-input" placeholder="Enter your praise for canned oysters here ..."></textarea>
+      </div><button id="submit" type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
