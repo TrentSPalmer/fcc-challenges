@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Ubuntu+Mono" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lmde-3-disk-encryption.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="lmde-3-disk-encryption.js"></script>
+    <title>LMDE 3 Disk Encryption - Build a Technical Document Page - Responsive Web Design Projects</title>
+  </head>
+  <body>
+    <div>
+      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </div><br>
+    <div class="nav-container">
+      <nav id="navbar">
+        <header>
+          <a class="nav-title" href="#"><h1>LMDE 3 with Disk Encryption</h1></a>
+        </header>
+        <a class="nav-link" href="#Introduction"><h2>Introduction</h2></a>
+        <a class="nav-link" href="#Prepare_The_Installation_Media"><h2>Prepare The Installation Media</h2></a>
+        <a class="nav-link" href="#Boot_The_Install_Disc"><h2>Boot The Install Disc</h2></a>
+        <a class="nav-link" href="#Partition_The_Hard_Drive"><h2>Partition The Hard Drive</h2></a>
+        <a class="nav-link" href="#Mount_The_Hard_Drive"><h2>Mount The Hard Drive</h2></a>
+        <a class="nav-link" href="#Run_The_Installer_App"><h2>Run The Installer App</h2></a>
+        <a class="nav-link" href="#Configure_Fstab"><h2>Configure Fstab</h2></a>
+        <a class="nav-link" href="#Configure_Crypttab"><h2>Configure Crypttab</h2></a>
+        <a class="nav-link" href="#Resume_Installer_App"><h2>Resume Installer App</h2></a>
+        <a class="nav-link" href="#UEFI_Fix"><h2>UEFI Fix</h2></a>
+        <a class="nav-link" href="#Optional_Swap_File"><h2>Optional Swap File</h2></a>
+      </nav>
+    </div>
+    <div class="main-container">
+      <main id="main-doc">
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Introduction" class="main-section">
+        <header><h2>Introduction</h2></header>
+        <p class="main-left-indent">
+        Linux Mint Debian Edition is the alternate version of Linux Mint, but built on a Debian base. The result is
+        quite pleasant: the stability of desktop Debian, but with the rough edges polished smooth, nicely configured
+        fonts and ui, and all the multi-media codecs included.</p>
+
+        <p class="main-left-indent">
+        Unfortunately, the LMDE 3 installer does not support disk encryption, but manually setting this up by hand
+        is pretty straightforward.  On the other hand, manually setting up your partitions by hand allows extra
+        freedom and flexibility, and so I have chosen a simple luks-encrypted "/" partition formatted xfs.</p>
+        
+        <p class="main-left-indent">
+        As far as swap is concerned, my preference is to use a swap file instead of a swap partition. Having a swap
+        file instead of a swap partition is more flexible because obviously you can easily recreate a different size
+        swap file whenever you like (or use none at all), and the encryption requires no extra set up because the "/"
+        partition is encrypted anyway.</p>
+
+        <p class="main-left-indent">
+        Will this work with a dual-boot set up?  Of course!  Because you have to manually configure the partitions anyway,
+        just arrange them exactly how you would need for dual-boot.
+        </p>
+
+        <p class="main-left-indent">
+        Assumes uefi-configured boot, with separate partitions for /boot formatted ext4, /boot/efi formatted fat32,
+        and a regular luks-encrypted partition for "/" formatted xfs.
+        </p>
+      </section>
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Prepare_The_Installation_Media" class="main-section">
+        <header><h2>Prepare The Installation Media</h2></header>
+        <p class="main-left-indent">
+        Visit the <a target="_blank" href="https://www.linuxmint.com">Linux Mint Website</a> and
+        <a target="_blank" href="https://www.linuxmint.com/edition.php?id=259">download</a> the iso file for LMDE 3 64bit. Download from
+        torrents if possible, to save bandwidth.
+        </p>
+        <ul>
+          <li>verify the sha256 sum of the iso file<br>
+            <code>sha256sum lmde-3-201808-cinnamon-64bit.iso</code>
+          </li>
+        </ul>
+        <p class="main-left-indent">
+        Identify the thumb drive you are going to install from.
+        </p>
+        <ul>
+          <li>type <code>lsblk</code>, note the output, and then insert the thumb drive</li>
+          <li>then type <code>lsblk</code> again and note the <em>additional output</em></li>
+        </ul>
+        <pre class="main-left-indent"># lsblk /dev/sdb
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sdb      8:32   1 14.5G  0 disk 
+├─sdb1   8:33   1  3.4G  0 part /media/trent/Debian 9.6.0 amd64 1
+└─sdb2   8:34   1  416K  0 part</pre>
+        <p class="main-left-indent">
+        In the above example output we see that our thumb drive is identified as /dev/sdb,
+        and partition <em>/dev/sdb1</em> is automatically mounted.
+        </p>
+        <p class="main-left-indent">
+        Take special care that you have accurately identified the thumb drive before proceeding.
+        For the sake of example, we will proceed on the assumption that our thumb drive is
+        identified as /dev/sdb, but you need to compensate accordingly.
+        </p>
+        <ul>
+          <li>unmount any partition of the thumb drive that are automatically mounted<br>
+            <code>umount /dev/sdb1</code>
+          </li>
+          <li>write the disk image to the thumb drive<br>
+            <code>ddrescue -D --force lmde-3-201808-cinnamon-64bit.iso /dev/sdb</code>
+          </li>
+        </ul>
+      </section>
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Boot_The_Install_Disc" class="main-section">
+        <header><h2>Boot The Install Disc</h2></header>
+        <ul>
+          <li>boot into bios to disable fastboot and secureboot</li>
+          <li>invoke your machine's device boot menu and boot the install disc in uefi mode</li>
+          <li>confirm that you have booted in uefi mode by listing efivars<br>
+            <code>ls /sys/firmware/efi/vars</code>
+          </li>
+        </ul>
+      </section>
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Partition_The_Hard_Drive" class="main-section">
+        <header><h2>Partition The Hard Drive</h2></header>
+        <p class="main-left-indent">
+        If you recall we are assuming the target hard drive is /dev/sda, as an example.
+        So, make adjustments as necessary.</p>
+        <p class="main-left-indent">
+        If you would rather use a different partition tool, make sure the efi partition
+        is an efi partition type, and you definitely need a separate /boot partition.</p>
+        <ul>
+          <li>if needed you can clear the drive with wipefs<br>
+            <code>wipefs --all /dev/sda</code>
+          </li>
+          <li>create a new partition table for /dev/sda<br>
+            <code>sgdisk /dev/sda -o</code>
+          </li>
+          <li>create a new efi partition for /dev/sda<br>
+            <code>sgdisk /dev/sda --new=1::+512MiB --typecode=1:ef00</code>
+          </li>
+          <li>create a new /boot partition for /dev/sda<br>
+            <code>sgdisk /dev/sda --new=2::+1G</code>
+          </li>
+          <li>create a new / partition for /dev/sda<br>
+            <code>sgdisk /dev/sda --new=3</code>
+          </li>
+          <li>verify your partition work<br>
+            <code>sgdisk /dev/sda -p</code>
+          </li>
+          <li>format the efi partition<br>
+            <code>makefs.vfat -F32 /dev/sda1</code>
+          </li>
+          <li>format the /boot partition<br>
+            <code>makefs.ext4  /dev/sda2</code>
+          </li>
+          <li>encrypt the / partition, you will be prompted for a password<br>
+            <code>cryptsetup -y -v luksFormat --type luks2 /dev/sda3</code>
+          </li>
+          <li>decrypt the / partition, you will be prompted for a password<br>
+            <code>cryptsetup open /dev/sda3 cryptroot</code>
+          </li>
+          <li>format the / device<br>
+            <code>makefs.xfs /dev/mapper/cryptroot</code>
+          </li>
+        </ul>
+      </section>
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Mount_The_Hard_Drive" class="main-section">
+        <header><h2>Mount The Hard Drive</h2></header>
+        <p class="main-left-indent">
+        This takes advantage of <em>expert mode</em> in the LMDE installer.</p>
+        <ul>
+          <li>create an /target directory<br>
+            <code>mkdir /target</code>
+          </li>
+          <li>mount the "/" device at /target<br>
+            <code>mount /dev/mapper/cryptroot /target</code>
+          </li>
+          <li>create an /target/boot directory<br>
+            <code>mkdir /target/boot</code>
+          </li>
+          <li>mount the /boot partition at /target/boot<br>
+            <code>mount /dev/sda2 /target/boot</code>
+          </li>
+          <li>create an /target/boot/efi directory<br>
+            <code>mkdir /target/boot/efi</code>
+          </li>
+          <li>mount the efi partition at /target/boot/efi<br>
+            <code>mount /dev/sda1 /target/boot/efi</code>
+          </li>
+        </ul>
+      </section>
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Run_The_Installer_App" class="main-section">
+        <header><h2>Run The Installer App</h2></header>
+        <p class="main-left-indent">
+        At this point you're ready to run the live installer. You can click the disc
+        icon on the desktop.</p>
+        <p class="main-left-indent">
+        The first three pages of the live-installer cover Language,Timezone, and Keymap.
+        The fourth page of the live-installer covers name, password, and hostname.
+        On the fifth page of the live-installer, you come to a partition configuration page.
+        But there is nothing to do, so select <em>expert mode</em> at the bottom of the page.
+        </p>
+        <p class="main-left-indent">
+        Again select <em>forward</em>, and when you come to the page where you configure the
+        location to install grub, that should be the efi partition, i.e. <em>/dev/sda1</em>.</p>
+        <p class="main-left-indent">
+        Select <em>forward</em> one more time, and then select <em>install</em>.
+        The installation will run for a few minutes and will then pause. During the pause you need
+        to manually configure fstab and crypttab.</p>
+      </section>
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Configure_Fstab" class="main-section">
+        <header><h2>Configure Fstab</h2></header>
+        <ul>
+          <li>find the UUID of the efi partition<br>
+            <code>blkid /dev/sda1 -s UUID</code>
+          </li>
+          <li>find the UUID of the /boot partition<br>
+            <code>blkid /dev/sda2 -s UUID</code>
+          </li>
+          <li>find the UUID of the "/" device<br>
+            <code>blkid /dev/mapper/cryptroot -s UUID</code>
+          </li>
+        </ul>
+        <p class="main-left-indent">
+        And when you find the correct UUID numbers, use them to
+        configure <em>/etc/fstab</em> which is actually currently at <em>/target/etc/fstab</em>.</p>
+        <pre class="main-left-indent" id="etc-fstab"># /etc/fstab
+###############
+# efi partition
+# run the command `blkid /dev/sda1 -s UUID` which outputs
+# /dev/sda1: UUID="17C4-215D", from which derive
+UUID=17C4-215D   /boot/efi  vfat  defaults   0 2
+
+# /boot partition
+# run the command `blkid /dev/sda2 -s UUID` which outputs
+# /dev/sda2: UUID="f2509fff-4854-4721-b546-0274c89e6aec", from which derive
+UUID=f2509fff-4854-4721-b546-0274c89e6aec  /boot  ext4  defaults   0   2
+
+# "/" device
+# run the command `blkid /dev/mapper/cryptroot -s UUID` which outputs
+# /dev/mapper/cryptroot: UUID="72241377-cd65-43a6-8363-1afce5bd93f6", from which derive
+UUID=72241377-cd65-43a6-8363-1afce5bd93f6  /      xfs   defaults   0   1</pre>
+        <button onclick="copyToClipboard('#etc-fstab')">copy example fstab</button>
+      </section>
+      <!-- Section -->
+      <!-- Section -->
+      <!-- Section -->
+      <section id="Configure_Crypttab" class="main-section">
+        <header><h2>Configure Crypttab</h2></header>
+        <p class="main-left-indent">
+        But before the file systems can be mounted, crypttab needs to mount <em>/dev/sda3</em>
+        at <em>/dev/mapper/cryptroot</em>.
+        Configure <em>/etc/crypttab</em> which is actually currently at <em>/target/etc/crypttab</em>
+        <ul>
+          <li>find the UUID of the partition that will be mounted at /dev/mapper/crypttab<br>
+            <code>blkid /dev/sda3 -s UUID</code>
+          </li>
+        </ul>
+        <p class="main-left-indent">
+        And when you find the correct UUID number for /dev/sda3, use that to
+        configure <em>/etc/crypttab</em> which is actually currently at <em>/target/etc/crypttab</em>.</p>
+        <pre class="main-left-indent" id="etc-crypttab"># /etc/crypttab
+# run the command `blkid /dev/sda3 -s UUID` which outputs
+# /dev/sdb3: UUID="da3e0967-711f-4159-85ac-7d5743a75201", from which derive
+# &lt;target name&gt;	&lt;source device&gt;		                    &lt;key file&gt;	  &lt;options&gt;
+cryptroot       UUID=da3e0967-711f-4159-85ac-7d5743a75201     none        luks</pre>
+        <button onclick="copyToClipboard('#etc-crypttab')">copy example crypttab</button>
+      </section>
+      <section id="Resume_Installer_App" class="main-section">
+        <header><h2>Resume Installer App</h2></header>
+        <p class="main-left-indent">
+        At this point finish running the live installer, and you'll be done.</p>
+      </section>
+      <section id="UEFI_Fix" class="main-section">
+        <header><h2>UEFI Fix</h2></header>
+        <p class="main-left-indent">
+        On some machines, such as HP Laptops, UEFI is broken and efi boot entries don't persist.</p>
+        <ul>
+          <li>remount the efi parition<br>
+            <code>mount /dev/sda1 /mnt/ ; cd /mnt/EFI/</code>
+          </li>
+          <li>create a default efi executable<br>
+            <code>mkdir BOOT ; cp linuxmint/grubx64.efi BOOT/BOOTX64.efi</code>
+          </li>
+        </ul>
+      </section>
+      <section id="Optional_Swap_File" class="main-section">
+        <header><h2>Optional Swap File</h2></header>
+        <p class="main-left-indent">
+        Visit the <a target="_blank" href="https://wiki.archlinux.org/index.php/Swap#Swap_file">Arch Wiki</a> and
+        they will hook you up.
+        </p>
+      </section>
+      </main>
+    </div>
+  </body>
+</html>
