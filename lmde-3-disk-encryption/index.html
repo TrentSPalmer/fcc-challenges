@@ -147,7 +147,7 @@ sdb      8:32   1 14.5G  0 disk
           <li>create a new /boot partition for /dev/sda<br>
             <code>sgdisk /dev/sda <nobr>--new=2::+1G</nobr></code>
           </li>
-          <li>create a new / partition for /dev/sda<br>
+          <li>create a new "/" partition for /dev/sda<br>
             <code>sgdisk /dev/sda <nobr>--new=3</nobr></code>
           </li>
           <li>verify your partition work<br>
@@ -159,13 +159,13 @@ sdb      8:32   1 14.5G  0 disk
           <li>format the /boot partition<br>
             <code>makefs.ext4  /dev/sda2</code>
           </li>
-          <li>encrypt the / partition, you will be prompted for a password<br>
+          <li>encrypt the "/" partition, you will be prompted for a password<br>
             <code>cryptsetup <nobr>-y -v</nobr> luksFormat <nobr>--type</nobr> luks2 /dev/sda3</code>
           </li>
-          <li>decrypt the / partition, you will be prompted for a password<br>
+          <li>decrypt the "/" partition, you will be prompted for a password<br>
             <code>cryptsetup open /dev/sda3 cryptroot</code>
           </li>
-          <li>format the / device<br>
+          <li>format the "/" device<br>
             <code>makefs.xfs /dev/mapper/cryptroot</code>
           </li>
         </ul>
