@@ -77,7 +77,7 @@
         </p>
         <ul>
           <li>verify the sha256 sum of the iso file<br>
-            <code>sha256sum lmde-3-201808-cinnamon-64bit.iso</code>
+            <code>sha256sum <nobr>lmde-3-201808-cinnamon-64bit.iso</nobr></code>
           </li>
         </ul>
         <p class="main-left-indent">
@@ -106,7 +106,7 @@ sdb      8:32   1 14.5G  0 disk
             <code>umount /dev/sdb1</code>
           </li>
           <li>write the disk image to the thumb drive<br>
-            <code>ddrescue -D --force lmde-3-201808-cinnamon-64bit.iso /dev/sdb</code>
+            <code>ddrescue -D <nobr>--force</nobr> <nobr>lmde-3-201808-cinnamon-64bit.iso</nobr> /dev/sdb</code>
           </li>
         </ul>
       </section>
@@ -142,25 +142,25 @@ sdb      8:32   1 14.5G  0 disk
             <code>sgdisk /dev/sda -o</code>
           </li>
           <li>create a new efi partition for /dev/sda<br>
-            <code>sgdisk /dev/sda --new=1::+512MiB --typecode=1:ef00</code>
+            <code>sgdisk /dev/sda <nobr>--new=1::+512MiB</nobr> <nobr>--typecode=1:ef00</nobr></code>
           </li>
           <li>create a new /boot partition for /dev/sda<br>
-            <code>sgdisk /dev/sda --new=2::+1G</code>
+            <code>sgdisk /dev/sda <nobr>--new=2::+1G</nobr></code>
           </li>
           <li>create a new / partition for /dev/sda<br>
-            <code>sgdisk /dev/sda --new=3</code>
+            <code>sgdisk /dev/sda <nobr>--new=3</nobr></code>
           </li>
           <li>verify your partition work<br>
-            <code>sgdisk /dev/sda -p</code>
+            <code>sgdisk /dev/sda <nobr>-p</nobr></code>
           </li>
           <li>format the efi partition<br>
-            <code>makefs.vfat -F32 /dev/sda1</code>
+            <code>makefs.vfat <nobr>-F32</nobr> /dev/sda1</code>
           </li>
           <li>format the /boot partition<br>
             <code>makefs.ext4  /dev/sda2</code>
           </li>
           <li>encrypt the / partition, you will be prompted for a password<br>
-            <code>cryptsetup -y -v luksFormat --type luks2 /dev/sda3</code>
+            <code>cryptsetup <nobr>-y -v</nobr> luksFormat <nobr>--type</nobr> luks2 /dev/sda3</code>
           </li>
           <li>decrypt the / partition, you will be prompted for a password<br>
             <code>cryptsetup open /dev/sda3 cryptroot</code>
@@ -233,7 +233,7 @@ sdb      8:32   1 14.5G  0 disk
             <code>blkid /dev/sda2 -s UUID</code>
           </li>
           <li>find the UUID of the "/" device<br>
-            <code>blkid /dev/mapper/cryptroot -s UUID</code>
+            <code>blkid /dev/mapper/cryptroot <nobr>-s</nobr> UUID</code>
           </li>
         </ul>
         <p class="main-left-indent">
