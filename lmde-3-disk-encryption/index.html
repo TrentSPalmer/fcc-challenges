@@ -154,10 +154,10 @@ sdb      8:32   1 14.5G  0 disk
             <code>sgdisk /dev/sda <nobr>-p</nobr></code>
           </li>
           <li>format the efi partition<br>
-            <code>makefs.vfat <nobr>-F32</nobr> /dev/sda1</code>
+            <code>mkfs.vfat <nobr>-F32</nobr> /dev/sda1</code>
           </li>
           <li>format the /boot partition<br>
-            <code>makefs.ext4  /dev/sda2</code>
+            <code>mkfs.ext4  /dev/sda2</code>
           </li>
           <li>encrypt the "/" partition, you will be prompted for a password<br>
             <code>cryptsetup <nobr>-y -v</nobr> luksFormat <nobr>--type</nobr> luks2 /dev/sda3</code>
@@ -166,7 +166,7 @@ sdb      8:32   1 14.5G  0 disk
             <code>cryptsetup open /dev/sda3 cryptroot</code>
           </li>
           <li>format the "/" device<br>
-            <code>makefs.xfs /dev/mapper/cryptroot</code>
+            <code>mkfs.xfs /dev/mapper/cryptroot</code>
           </li>
         </ul>
       </section>
