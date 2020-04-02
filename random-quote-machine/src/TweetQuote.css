@@ -1,0 +1,39 @@
+.TweetQuote {
+  height: 60%;
+  width: 45%;
+  border: none;
+  border-radius: 5px;
+  font-size: 2.2em;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.tweetQuoteContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.TweetQuote:focus {
+  outline: 0;
+}
+
+.red-background {
+  background-color: #ff0000;
+  color: #000000;
+}
+
+.blue-background {
+  background-color: #0000ff;
+  color: #ff8000;
+}
+
+.yellow-background {
+  background-color: #ffff00;
+  color: #0080ff;
+}

@@ -1,0 +1,23 @@
+.red {
+  color: #00ff80;
+}
+
+.blue {
+  color: #0000ff;
+}
+
+.yellow {
+  color: #ffff00;
+}
+
+.text {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: bold;
+}
+
+.author {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-style: oblique;
+}

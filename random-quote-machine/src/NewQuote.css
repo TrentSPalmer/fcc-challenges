@@ -1,0 +1,28 @@
+.NewQuote {
+  text-align: center;
+  height: 60%;
+  width: 45%;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.NewQuote:focus {
+  outline: 0;
+}
+
+.red-background {
+  background-color: #ff0000;
+  color: #000000;
+}
+
+.blue-background {
+  background-color: #0000ff;
+  color: #ff8000;
+}
+
+.yellow-background {
+  background-color: #ffff00;
+  color: #0080ff;
+}
