@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/css/main.899e3888.chunk.css",
-    "main.js": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/js/main.e5d79b90.chunk.js",
-    "main.js.map": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/js/main.e5d79b90.chunk.js.map",
-    "runtime-main.js": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/js/runtime-main.c1bc5a42.js",
-    "runtime-main.js.map": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/js/runtime-main.c1bc5a42.js.map",
-    "static/js/2.a720d7f8.chunk.js": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/js/2.a720d7f8.chunk.js",
-    "static/js/2.a720d7f8.chunk.js.map": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/js/2.a720d7f8.chunk.js.map",
-    "index.html": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/index.html",
-    "precache-manifest.25abb57c10a59d755367c7dec092b4ac.js": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/precache-manifest.25abb57c10a59d755367c7dec092b4ac.js",
-    "service-worker.js": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/service-worker.js",
-    "static/css/main.899e3888.chunk.css.map": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/css/main.899e3888.chunk.css.map",
-    "static/js/2.a720d7f8.chunk.js.LICENSE.txt": "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/static/js/2.a720d7f8.chunk.js.LICENSE.txt"
+    "main.css": "/fcc-challenges/random-quote-machine/build/static/css/main.899e3888.chunk.css",
+    "main.js": "/fcc-challenges/random-quote-machine/build/static/js/main.b6838136.chunk.js",
+    "main.js.map": "/fcc-challenges/random-quote-machine/build/static/js/main.b6838136.chunk.js.map",
+    "runtime-main.js": "/fcc-challenges/random-quote-machine/build/static/js/runtime-main.905bafdb.js",
+    "runtime-main.js.map": "/fcc-challenges/random-quote-machine/build/static/js/runtime-main.905bafdb.js.map",
+    "static/js/2.a720d7f8.chunk.js": "/fcc-challenges/random-quote-machine/build/static/js/2.a720d7f8.chunk.js",
+    "static/js/2.a720d7f8.chunk.js.map": "/fcc-challenges/random-quote-machine/build/static/js/2.a720d7f8.chunk.js.map",
+    "index.html": "/fcc-challenges/random-quote-machine/build/index.html",
+    "precache-manifest.00884933380590505cabd88c9e1af2d6.js": "/fcc-challenges/random-quote-machine/build/precache-manifest.00884933380590505cabd88c9e1af2d6.js",
+    "service-worker.js": "/fcc-challenges/random-quote-machine/build/service-worker.js",
+    "static/css/main.899e3888.chunk.css.map": "/fcc-challenges/random-quote-machine/build/static/css/main.899e3888.chunk.css.map",
+    "static/js/2.a720d7f8.chunk.js.LICENSE.txt": "/fcc-challenges/random-quote-machine/build/static/js/2.a720d7f8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c1bc5a42.js",
+    "static/js/runtime-main.905bafdb.js",
     "static/js/2.a720d7f8.chunk.js",
     "static/css/main.899e3888.chunk.css",
-    "static/js/main.e5d79b90.chunk.js"
+    "static/js/main.b6838136.chunk.js"
   ]
 }

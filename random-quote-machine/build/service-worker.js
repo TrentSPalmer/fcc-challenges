@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/precache-manifest.25abb57c10a59d755367c7dec092b4ac.js"
+  "/fcc-challenges/random-quote-machine/build/precache-manifest.00884933380590505cabd88c9e1af2d6.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -33,7 +33,7 @@ workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/TrentSPalmer/fcc-challenges/tree/gh-pages/random-quote-machine/build/index.html"), {
+workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/fcc-challenges/random-quote-machine/build/index.html"), {
   
   blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
