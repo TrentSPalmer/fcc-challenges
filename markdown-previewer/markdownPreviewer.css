@@ -74,7 +74,31 @@ img {
   height: auto;
 }
 
-@media  (orientation: landscape) {
+#textEditor {
+  background-color: #073642;
+}
+
+#buttonHeader {
+  height: 3rem;
+}
+
+@media (orientation: portrait), (max-device-width: 768px) {
+  #editorAndPreview {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  #editor {
+    height: 30vh;
+    width: 100vw;
+  }
+  #preview {
+    overflow-y: scroll;
+    height: 40vh;
+    width: 100vw;
+  }
+}
+
+@media (min-device-width: 1024px), (orientation: landscape) and (max-device-height: 425px) {
   #editorAndPreview {
     flex-direction: row;
     justify-content: flex-end;
@@ -87,22 +111,11 @@ img {
     resize: none;
     width: 100%;
     height: 100%;
+    padding-bottom: 3%;
   }
-}
-
-@media  (orientation: portrait) {
-  #buttonHeader {
-    height: 3rem;
-  }
-  #editorAndPreview {
-    flex-direction: column;
-  }
-  #editor {
-    height: 43vh;
-    width: 100vw;
-  }
-  #preview {
-    overflow: scroll;
-    height: 50vh;
+  @media (max-device-height: 425px) {
+    #textEditor, #preview {
+      height: 90vh;
+    }
   }
 }
