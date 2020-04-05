@@ -1,23 +1,49 @@
-html,body {
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo Bhai', serif;
+  color: #f1f3ce;
+  background-color: #00293C;
 }
 
 h1 {
-  text-align: center;
+  font-size: 1.4em;
+  margin-bottom: -.5em;
+  color: #f1f3ce;
+}
+h2 {
+  font-size: 1em;
 }
 
-#directory-list {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
+div {
+  margin: auto;
+  text-align: left;
+  width: 90%;
+  padding: .1em;
 }
-
-#directory-list li {
-  margin: 1.5rem auto;
-  font-weight: 700;
+a {
+  box-shadow: .1em .1em black;
   text-decoration: none;
-  text-decoration-color: black;
+  text-indent: 1em;
+  color: #f1f3ce;
+  font-size: 20px;
+  display: block;
+  background: #1e656d;
+  padding: .1em;
+  margin: .1em;
+  border: .1em solid black; 
+  border-radius: .3em;
+}
+a:hover {
+  background-color: #f62a00;
+}
+a:focus {
+  background-color: #f1f3ce;
+  color: #f62a00;
 }
 
-#directory-list a {
-  color: hsl(100, 19%, 18%);
+@media (min-width: 1201px) {
+  div {
+    width: 95%
+  }
 }
