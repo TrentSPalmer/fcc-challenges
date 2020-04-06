@@ -27,7 +27,7 @@ class TextAuthor extends React.Component {
     const textClass = "text " + colors[this.props.colorCount];
     const authorClass = "author " + colors[this.props.colorCount];
     return (
-      <div style={{ fontSize: ".7em" }}>
+      <div>
         <p className={textClass} id="text">
           {quote}
         </p>

@@ -21,20 +21,10 @@ class TweetQuote extends React.Component {
       );
     }
     return (
-      <div className="tweetQuoteContainer">
-        <div className={tweetQuoteClass}>
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            id="tweet-quote"
-          >
-            <FontAwesomeIcon
-              icon={faTwitter}
-              className={colors[this.props.colorCount]}
-            />
-          </a>
-        </div>
+      <div className={tweetQuoteClass}>
+        <a href={href} target="_blank" rel="noopener noreferrer" id="tweet-quote">
+          <FontAwesomeIcon icon={faTwitter} className={colors[this.props.colorCount]}/>
+        </a>
       </div>
     );
   }

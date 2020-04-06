@@ -30,11 +30,7 @@ class NewQuote extends React.Component {
     const colors = ["red-background", "blue-background", "yellow-background"];
     const newQuoteClass = "NewQuote " + colors[this.props.colorCount];
     return (
-      <button
-        onClick={this.handleClick}
-        className={newQuoteClass}
-        id="new-quote"
-      >
+      <button onClick={this.handleClick} className={newQuoteClass} id="new-quote">
         Click Me!
       </button>
     );

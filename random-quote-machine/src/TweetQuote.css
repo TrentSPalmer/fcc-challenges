@@ -1,5 +1,5 @@
 .TweetQuote {
-  height: 60%;
+  height: 45%;
   width: 45%;
   border: none;
   border-radius: 5px;
@@ -7,16 +7,7 @@
   font-weight: bold;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-.tweetQuoteContainer {
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  margin: auto;
 }
 
 .TweetQuote:focus {
@@ -24,16 +15,32 @@
 }
 
 .red-background {
-  background-color: #ff0000;
+  background-color: #ff1500;
   color: #000000;
 }
 
 .blue-background {
-  background-color: #0000ff;
-  color: #ff8000;
+  background-color: #006aff;
+  color: #eaff00;
 }
 
 .yellow-background {
-  background-color: #ffff00;
-  color: #0080ff;
+  background-color: #eaff00;
+  color: #006bff;
+}
+
+.TweetQuote > a {
+  margin: auto;
+}
+
+@media (orientation: portrait) and (max-device-width: 767px) {
+  .TweetQuote {
+    height: 40%;
+  }
+}
+
+@media (orientation: landscape) and (max-device-height: 450px) {
+  .TweetQuote {
+    height: 60%;
+  }
 }

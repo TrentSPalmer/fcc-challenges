@@ -19,6 +19,8 @@ class QuoteBox extends React.Component {
     return (
       <div className={quoteBoxClass} id="quote-box">
         <div className="quote-box-top">
+        </div>
+        <div className="quote-box-middle">
           <TextAuthor />
         </div>
         <div className="quote-box-bottom">
@@ -28,6 +30,8 @@ class QuoteBox extends React.Component {
           <div className="quote-box-bottom-right">
             <NewQuote />
           </div>
+        </div>
+        <div className="quote-box-underneath">
         </div>
       </div>
     );

@@ -1,13 +1,13 @@
 .red {
-  color: #00ff80;
+  color: #00ff94;
 }
 
 .blue {
-  color: #0000ff;
+  color: white;
 }
 
 .yellow {
-  color: #ffff00;
+  color: white;
 }
 
 .text {
@@ -20,4 +20,21 @@
   margin-left: 10%;
   margin-right: 10%;
   font-style: oblique;
+}
+
+p {
+  font-size: .7em;
+  margin: auto;
+}
+
+@media (orientation: portrait) and (max-device-width: 767px) {
+  p {
+    font-size: .9em;
+  }
+}
+
+@media (orientation: landscape) and (max-device-height: 450px) {
+  p {
+    font-size: .9em;
+  }
 }
