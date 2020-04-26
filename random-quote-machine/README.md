@@ -1,3 +1,15 @@
+### Project Links
+
+* [GitHub Page View of this Repo](https://trentspalmer.github.io/fcc-challenges)
+* [GitHub Page View of this Project (random-quote-machine)](https://trentspalmer.github.io/fcc-challenges/random-quote-machine)
+
+### FreeCodeCamp Links
+
+* [FreeCodeCamp Instruction for This Project](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects/build-a-random-quote-machine)
+* [FreeCodeCamp Section](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects)
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
