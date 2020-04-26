@@ -68,6 +68,23 @@ button {
   margin-bottom: 2%;
 }
 
+.attachment-full {
+  position: absolute;
+  right: 0px;
+  height: 149px;
+  width: 149px;
+}
+
+.githubLabel {
+  background-color: #00293C;
+  border: none;
+  width: 149px;
+  height: 0px;
+  position: absolute;
+  right: 0px;
+  margin-top: -10px;
+}
+
 @media only screen and (max-width: 1100px) {
   body {
     display: flex;
@@ -147,4 +164,25 @@ button {
     font-size: 114%;
   }
 
+}
+@media (orientation: portrait) {
+  .attachment-full {
+    height: 99px;
+    width: 99px;
+  }
+
+  .githubLabel {
+    width: 99px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 400px) {
+  .attachment-full {
+    height: 99px;
+    width: 99px;
+  }
+
+  .githubLabel {
+    width: 99px;
+  }
 }
