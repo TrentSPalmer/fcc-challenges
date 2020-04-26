@@ -22,7 +22,11 @@ body {
   color: #fdf6e3;
 }
 
-#reloadButton {
+#forkOnGitHub {
+  font-size: x-large;
+}
+
+#reloadButton, #forkOnGitHub {
   background-color: #268bd2;
   color: #fdf6e3;
   margin-left: 1rem;
