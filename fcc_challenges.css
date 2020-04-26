@@ -2,8 +2,14 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Baloo Bhai', serif;
-  color: #f1f3ce;
   background-color: #00293C;
+}
+
+body {
+  color: #f1f3ce;
+  max-width: 900px;
+  margin: auto;
+  padding: 10px;
 }
 
 h1 {
@@ -21,7 +27,7 @@ div {
   width: 90%;
   padding: .1em;
 }
-a {
+.link {
   box-shadow: .1em .1em black;
   text-decoration: none;
   text-indent: 1em;
@@ -34,16 +40,54 @@ a {
   border: .1em solid black; 
   border-radius: .3em;
 }
-a:hover {
+.link:hover {
   background-color: #f62a00;
 }
-a:focus {
+.link:focus {
   background-color: #f1f3ce;
   color: #f62a00;
+}
+
+.attachment-full {
+  position: absolute;
+  right: 0px;
+  height: 149px;
+  width: 149px;
+}
+
+.githubLabel {
+  background-color: #00293C;
+  border: none;
+  width: 149px;
+  height: 0px;
+  position: absolute;
+  right: 0px;
 }
 
 @media (min-width: 1201px) {
   div {
     width: 95%
+  }
+}
+
+@media (orientation: portrait) {
+  .attachment-full {
+    height: 99px;
+    width: 99px;
+  }
+
+  .githubLabel {
+    width: 99px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 400px) {
+  .attachment-full {
+    height: 99px;
+    width: 99px;
+  }
+
+  .githubLabel {
+    width: 99px;
   }
 }
