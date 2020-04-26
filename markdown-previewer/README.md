@@ -1,4 +1,4 @@
-### Project Links
+### Markdown-Previewer Project Links
 
 * [GitHub Page View of this Repo](https://trentspalmer.github.io/fcc-challenges)
 * [GitHub Page View of this Project (markdown-previewer)](https://trentspalmer.github.io/fcc-challenges/markdown-previewer)

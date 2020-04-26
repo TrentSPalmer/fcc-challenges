@@ -1,4 +1,4 @@
-### Project Links
+### Drum Machine Project Links
 
 * [GitHub Page View of this Repo](https://trentspalmer.github.io/fcc-challenges)
 * [GitHub Page View of this Project (drum-machine)](https://trentspalmer.github.io/fcc-challenges/drum-machine)
