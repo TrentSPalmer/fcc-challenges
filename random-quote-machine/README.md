@@ -1,7 +1,7 @@
 ### Project Links
 
 * [GitHub Page View of this Repo](https://trentspalmer.github.io/fcc-challenges)
-* [GitHub Page View of this Project (random-quote-machine)](https://trentspalmer.github.io/fcc-challenges/random-quote-machine)
+* [GitHub Page View of this Project (random-quote-machine)](https://trentspalmer.github.io/fcc-challenges/random-quote-machine/build)
 
 ### FreeCodeCamp Links
 
