@@ -165,6 +165,7 @@ button {
   }
 
 }
+
 @media (orientation: portrait) {
   .attachment-full {
     height: 99px;

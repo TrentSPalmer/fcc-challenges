@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fcc-challenges/random-quote-machine/build/static/css/main.5a3875ee.chunk.css",
+    "main.css": "/fcc-challenges/random-quote-machine/build/static/css/main.50a465cb.chunk.css",
     "main.js": "/fcc-challenges/random-quote-machine/build/static/js/main.13413d36.chunk.js",
     "main.js.map": "/fcc-challenges/random-quote-machine/build/static/js/main.13413d36.chunk.js.map",
     "runtime-main.js": "/fcc-challenges/random-quote-machine/build/static/js/runtime-main.905bafdb.js",
@@ -8,15 +8,15 @@
     "static/js/2.a720d7f8.chunk.js": "/fcc-challenges/random-quote-machine/build/static/js/2.a720d7f8.chunk.js",
     "static/js/2.a720d7f8.chunk.js.map": "/fcc-challenges/random-quote-machine/build/static/js/2.a720d7f8.chunk.js.map",
     "index.html": "/fcc-challenges/random-quote-machine/build/index.html",
-    "precache-manifest.46f3e4e9f0fc0a551e5d11c3cf0c4b89.js": "/fcc-challenges/random-quote-machine/build/precache-manifest.46f3e4e9f0fc0a551e5d11c3cf0c4b89.js",
+    "precache-manifest.085cfefaa2c9f1ba463f90ef0d138829.js": "/fcc-challenges/random-quote-machine/build/precache-manifest.085cfefaa2c9f1ba463f90ef0d138829.js",
     "service-worker.js": "/fcc-challenges/random-quote-machine/build/service-worker.js",
-    "static/css/main.5a3875ee.chunk.css.map": "/fcc-challenges/random-quote-machine/build/static/css/main.5a3875ee.chunk.css.map",
+    "static/css/main.50a465cb.chunk.css.map": "/fcc-challenges/random-quote-machine/build/static/css/main.50a465cb.chunk.css.map",
     "static/js/2.a720d7f8.chunk.js.LICENSE.txt": "/fcc-challenges/random-quote-machine/build/static/js/2.a720d7f8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.905bafdb.js",
     "static/js/2.a720d7f8.chunk.js",
-    "static/css/main.5a3875ee.chunk.css",
+    "static/css/main.50a465cb.chunk.css",
     "static/js/main.13413d36.chunk.js"
   ]
 }
