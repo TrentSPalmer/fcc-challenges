@@ -1,0 +1,466 @@
+body {
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+.tool-tip-class {
+  background-color: #756d58;
+  font-size: 2rem;
+  font-style: oblique;
+  border-color: black !important;
+  border-width: 2px !important; 
+  border-style: solid; 
+  border-radius: 6px;
+  width: unset !important;
+  max-width: unset !important;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#test {
+  position: absolute;
+}
+
+#drum-machine {
+  background-color: #756d58;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#display {
+  background-color: #586075;
+  margin: auto;
+  height: 70vh;
+  min-height: 400px;
+  width: 80vw;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#display-top, #display-bottom {
+  flex-basis: 19%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  font-size: x-large;
+  font-style: oblique;
+}
+
+#display-middle {
+  flex-basis: 62%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ and Edge */
+  user-select: none; /* Standard syntax */
+}
+
+#display-middle-left {
+  flex-basis: 55%;
+  display: flex;
+  flex-direction: row;
+}
+
+#display-middle-left-b {
+  flex-basis: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#drum-pad-grid {
+  margin: auto;
+  background-color: #607558;
+  border-radius: 1rem;
+  width: 54vh;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 0 2vh 2vh;
+}
+
+.drum-pad-row {
+  height: 33%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.drum-pad {
+  border-radius: 1rem;
+  width: 33%;
+  background-color: #6d5875;
+  border: black;
+  border-width: 2px; 
+  border-style: solid; 
+  margin: 2vh 2vh 0 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: x-large;
+  font-style: oblique;
+}
+
+.drum-pad > p {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.selectionMenu {
+  margin: auto;
+  background-color: #607558;
+  border-radius: 1rem;
+  width: 54vh;
+  height: 45vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  scrollbar-color: black #6d5875;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.selectionMenu::-webkit-scrollbar {
+  background-color: #6d5875;
+}
+
+.selectionMenu::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+.selectionMenuItem, .volumeSelectionMenuItem, .metronomeSelectionMenuItem {
+  min-height: min-content;
+  background-color: #6d5875;
+  margin: 10px 20px 20px 10px;
+  padding: 15px;
+  border-radius: 1rem;
+  border-width: 2px; 
+  border-style: solid; 
+  text-align: center;
+  font-style: bold;
+  font-size: 1.6rem;
+}
+
+#display-middle-right {
+  flex-basis: 45%;
+  display: flex;
+  flex-direction: row;
+}
+
+#display-middle-left-a, #display-middle-left-c {
+  flex-basis: 5%;
+}
+
+#display-middle-right-b, #display-middle-right-c, #display-middle-right-d {
+  flex-basis: 12%;
+}
+
+#display-middle-right-c {
+  min-width: 15px;
+}
+
+#display-middle-right-b, #display-middle-right-d {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#display-middle-right-e, #display-middle-right-g {
+  flex-basis: 5%;
+}
+
+#display-middle-right-e {
+  min-width: 50px;
+}
+
+#display-middle-right-f {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+} 
+
+.selection {
+  margin-left: auto;
+  margin-right: auto;
+  width: 15vh;
+  min-width: 110px;
+  height: 12vh;
+  min-height: 80px;
+  background-color: #6d5875;
+  border-radius: 1rem;
+  border-width: 2px; 
+  border-style: solid; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.selection > p {
+  margin: auto;
+  text-align: center;
+  font-size: large;
+}
+
+#volume-container {
+  margin-top: auto;
+  margin-bottom: auto;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 32px;
+}
+
+#volume {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  height: 205px;
+  width: 4px;
+  background: #333333;
+  border-radius: 4px;
+  border: none;
+}
+
+#volume > .ui-slider-range {
+  background: #333333;
+  border: none;
+  outline: none;
+}
+
+#volume > .ui-slider-handle {
+  border: none;
+  margin-left: -2px;
+  margin-bottom: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #333333;
+  cursor: pointer;
+  outline: none;
+}
+
+i.fa-volume-down {
+  color: #333333;
+  margin-left: -5px;
+}
+
+i.fa-volume-up {
+  color: #333333;
+  margin-left: -5px;
+}
+
+.attachment-full {
+  position: absolute;
+  right: 0px;
+  height: 149px;
+  width: 149px;
+}
+
+@media (orientation: landscape) and (max-width: 1520px) {
+  #display {
+    width: 90vw;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1258px) {
+  #display {
+    width: 99vw;
+  }
+}
+
+@media (orientation: portrait) {
+  #display {
+    margin: auto;
+    height: 90vh;
+    width: 95vw;
+    min-width: unset;
+    min-height: unset;
+  }
+
+  #display-top {
+    flex-basis: 12%;
+    font-size: x-large;
+  }
+
+  #display-bottom {
+    flex-basis: 8%;
+  }
+
+  #display-middle {
+    flex-basis: 80%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+  }
+
+  #display-middle-left {
+    flex-basis: unset;
+  }
+
+  #display-middle-right {
+    flex-basis: unset;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #select-volume, #display-middle-right-f, #display-middle-right-g {
+    display: none;
+  }
+
+  #display-middle-right-a, #display-middle-right-c, #display-middle-right-e {
+    display: none;
+  }
+
+  #display-middle-right-b, #display-middle-right-d {
+    flex-basis: unset;
+    min-width: unset;
+  }
+
+  #display-middle-right-b, #display-middle-right-d {
+    justify-content: space-around;
+  }
+
+  .selection {
+    max-height: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  #drum-pad-grid {
+    min-width: unset;
+    min-height: unset;
+  }
+
+  #drum-pad-grid, .selectionMenu {
+    width: 72vw;
+    height: 60vw;
+  }
+
+  .selectionMenuItem, .volumeSelectionMenuItem, .metronomeSelectionMenuItem {
+    padding: unset;
+  }
+
+  .attachment-full {
+    height: 99px;
+    width: 99px;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 767px) {
+  #drum-pad-grid, .selectionMenu {
+    width: 84vw;
+    height: 70vw;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 750px) {
+  #display-top {
+    font-size: large;
+  }
+
+  #drum-pad-grid, .selectionMenu {
+    width: 72vw;
+    height: 60vw;
+  }
+
+  .selection {
+    max-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #display-middle {
+    margin-top: 10px;
+  }
+}
+
+@media (orientation: landscape) and (max-device-width: 1024px) {
+  #display {
+    height: 90vh;
+    width: 90vw;
+    min-height: unset;
+  }
+
+  #display-middle-left {
+    flex-basis: 65%;
+  }
+
+  #display-middle-right {
+    flex-basis: 35%;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #select-volume, #display-middle-right-f, #display-middle-right-g {
+    display: none;
+  }
+
+  #display-middle-right-a, #display-middle-right-c, #display-middle-right-e {
+    display: none;
+  }
+
+  #display-middle-right-b, #display-middle-right-d {
+    flex-basis: unset;
+    min-width: unset;
+  }
+
+  #drum-pad-grid {
+    min-width: unset;
+    min-height: unset;
+  }
+
+  #drum-pad-grid, .selectionMenu {
+    width: 72vh;
+    height: 60vh;
+  }
+
+  .selectionMenuItem, .volumeSelectionMenuItem, .metronomeSelectionMenuItem {
+    padding: unset;
+  }
+}
+@media (orientation: landscape) and (max-device-height: 767px) {
+  #drum-pad-grid {
+    min-width: unset;
+    min-height: unset;
+  }
+
+  #drum-pad-grid, .selectionMenu {
+    width: 84vh;
+    height: 70vh;
+  }
+
+  #display-middle-left {
+    flex-basis: 60%;
+  }
+
+  #display-middle-right {
+    flex-basis: 40%;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 400px) {
+  #display-top {
+    font-size: large;
+  }
+
+  .attachment-full {
+    height: 99px;
+    width: 99px;
+  }
+}

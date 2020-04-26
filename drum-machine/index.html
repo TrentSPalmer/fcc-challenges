@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="#" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+                           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="drumMachine.css">
+    <title>Drum Machine - Build A Drum Machine - Front End Libraries Projects</title>
+  </head>
+
+  <body>
+    <div id="test">
+      <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    </div>
+    <div id="drum-machine">
+      <a href="https://github.com/TrentSPalmer/fcc-challenges/tree/gh-pages/drum-machine">
+        <img src="https://github.blog/wp-content/uploads/2008/12/forkme_right_white_ffffff.png?resize=149%2C149"
+        class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1">
+      </a>
+      <div id="display">
+        <div id="display-top"></div>
+        <div id="display-middle">
+          <div id="display-middle-left">
+            <div id="display-middle-left-a"></div>
+            <div id="display-middle-left-b">
+              <div id="drum-pad-grid">
+                <div class="drum-pad-row">
+                  <div class="drum-pad" id="Qpad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>Q</p>
+                  </div>
+                  <div class="drum-pad" id="Wpad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>W</p>
+                  </div>
+                  <div class="drum-pad" id="Epad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>E</p>
+                  </div>
+                </div>
+                <div class="drum-pad-row">
+                  <div class="drum-pad" id="Apad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>A</p>
+                  </div>
+                  <div class="drum-pad" id="Spad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>S</p>
+                  </div>
+                  <div class="drum-pad" id="Dpad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>D</p>
+                  </div>
+                </div>
+                <div class="drum-pad-row">
+                  <div class="drum-pad" id="Zpad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>Z</p>
+                  </div>
+                  <div class="drum-pad" id="Xpad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>X</p>
+                  </div>
+                  <div class="drum-pad" id="Cpad" title="" onclick="playSample($(this).attr('id'))">
+                    <p>C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="display-middle-left-c"></div>
+          </div>
+          <div id="display-middle-right">
+            <div id="display-middle-right-a"></div>
+            <div id="display-middle-right-b">
+              <div id="selection" class="selection" title=''><p>select<br/>a sound</p>
+              </div>
+              <div id="select-volume" class="selection" title=''><p>select<br/>a volume</p>
+              </div>
+              <div id="metronome" class="selection" title=''><p>metronome</p>
+              </div>
+            </div>
+            <div id="display-middle-right-c">
+            </div>
+            <div id="display-middle-right-d">
+              <div id="reset" class="selection" title=''><p>RESET</p>
+              </div>
+              <div id="stop" class="selection" title=''><p>STOP</p>
+              </div>
+            </div>
+            <div id="display-middle-right-e" title="">
+            </div>
+            <div id="display-middle-right-f" title="">
+              <div id="volume-container">
+                <i class="fa fa-volume-up"></i>
+                <div id="volume"></div>
+                <i class="fa fa-volume-down"></i>
+              </div>
+            </div>
+            <div id="display-middle-right-g" title="">
+            </div>
+          </div>
+        </div>
+        <div id="display-bottom"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="metronomeTempos.js"></script>
+    <script type="text/javascript" src="makeSelection.js"></script>
+    <script type="text/javascript" src="wavFiles.js"></script>
+    <script type="text/javascript" src="drumMachine.js"></script>
+  </body>
+
+</html>
