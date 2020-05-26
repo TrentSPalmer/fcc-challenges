@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fcc-challenges/drum-machine-react/build/static/css/main.b8f71121.chunk.css",
+    "main.js": "/fcc-challenges/drum-machine-react/build/static/js/main.918fd14d.chunk.js",
+    "main.js.map": "/fcc-challenges/drum-machine-react/build/static/js/main.918fd14d.chunk.js.map",
+    "runtime-main.js": "/fcc-challenges/drum-machine-react/build/static/js/runtime-main.6e36f512.js",
+    "runtime-main.js.map": "/fcc-challenges/drum-machine-react/build/static/js/runtime-main.6e36f512.js.map",
+    "static/js/2.4bb003c3.chunk.js": "/fcc-challenges/drum-machine-react/build/static/js/2.4bb003c3.chunk.js",
+    "static/js/2.4bb003c3.chunk.js.map": "/fcc-challenges/drum-machine-react/build/static/js/2.4bb003c3.chunk.js.map",
+    "index.html": "/fcc-challenges/drum-machine-react/build/index.html",
+    "precache-manifest.3cffdd470858b9b05871cd5a00936e79.js": "/fcc-challenges/drum-machine-react/build/precache-manifest.3cffdd470858b9b05871cd5a00936e79.js",
+    "service-worker.js": "/fcc-challenges/drum-machine-react/build/service-worker.js",
+    "static/css/main.b8f71121.chunk.css.map": "/fcc-challenges/drum-machine-react/build/static/css/main.b8f71121.chunk.css.map",
+    "static/js/2.4bb003c3.chunk.js.LICENSE.txt": "/fcc-challenges/drum-machine-react/build/static/js/2.4bb003c3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6e36f512.js",
+    "static/js/2.4bb003c3.chunk.js",
+    "static/css/main.b8f71121.chunk.css",
+    "static/js/main.918fd14d.chunk.js"
+  ]
+}
