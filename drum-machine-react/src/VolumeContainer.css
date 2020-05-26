@@ -1,0 +1,54 @@
+#volume-container {
+  margin: auto;
+  height: 300px;
+  width: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 32px;
+}
+
+#volume-input-container {
+  height: 210px;
+}
+
+#volume {
+  -webkit-appearance: none;
+  position: relative;
+  top: 75px;
+  left: -95px;
+  width: 205px;
+  height: 4px;
+  background: var(--global-black-color);
+  transform: rotate(270deg);
+  border-radius: 4px;
+  border: none;
+}
+
+#volume:focus {
+  outline: none;
+}
+
+#volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: var(--global-black-color);
+  margin-top: -2px;
+}
+
+#volume::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 50%;
+  background: var(--global-black-color);
+  cursor: pointer;
+}
+
+.volumeIcon {
+  color: var(--global-black-color);
+}

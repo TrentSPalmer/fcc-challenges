@@ -1,0 +1,107 @@
+@import 'globalCss.css';
+
+#drum-machine {
+  background: var(--global-first-color);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#display {
+  background-color: var(--global-second-color);
+  margin: auto;
+  height: 70vh;
+  min-height: 400px;
+  width: 80vw;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#display-top, #display-bottom {
+  flex-basis: 19%;
+  width: 100%;
+}
+
+#display-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: x-large;
+  font-style: oblique;
+}
+
+#display-top p {
+  height: 10px;
+  margin-top: 0px;
+}
+
+#menuToolTip {
+  position: relative;
+  left: 10px;
+  top: 20px;
+  background-color: var(--global-first-color);
+  max-width: max-content;
+  padding: 0px 10px 0px 10px;
+  font-size: x-large;
+  font-style: oblique;
+  border-color: black !important;
+  border-width: 2px !important; 
+  border-style: solid; 
+  border-radius: 6px;
+  text-align: center;
+}
+
+@media (orientation: landscape) and (max-width: 1520px) {
+  #display {
+    width: 90vw;
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1258px) {
+  #display {
+    width: 99vw;
+  }
+}
+
+@media (orientation: portrait) {
+  #display {
+    margin: auto;
+    height: 90vh;
+    width: 95vw;
+    min-width: unset;
+    min-height: unset;
+  }
+
+  #display-top {
+    flex-basis: 12%;
+    font-size: x-large;
+  }
+
+  #display-bottom {
+    flex-basis: 8%;
+  }
+}
+
+@media (orientation: portrait) and (max-device-width: 750px) {
+  #display-top {
+    font-size: large;
+  }
+}
+
+@media (orientation: landscape) and (max-device-width: 1024px) {
+  #display {
+    height: 90vh;
+    width: 90vw;
+    min-height: unset;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 400px) {
+  #display-top {
+    font-size: large;
+  }
+}
