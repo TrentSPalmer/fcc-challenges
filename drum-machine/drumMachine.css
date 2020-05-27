@@ -118,6 +118,10 @@ body {
   font-style: oblique;
 }
 
+.drum-pad:active {
+  background-color: var(--global-first-color);
+}
+
 .drum-pad > p {
   margin-top: auto;
   margin-bottom: auto;
@@ -157,6 +161,10 @@ body {
   text-align: center;
   font-style: bold;
   font-size: 1.6rem;
+}
+
+.selectionMenuItem:active, .volumeSelectionMenuItem:active, .metronomeSelectionMenuItem:active {
+  background-color: var(--global-first-color);
 }
 
 #display-middle-right {
@@ -212,6 +220,10 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.selection:active {
+  background-color: var(--global-first-color);
 }
 
 .selection > p {
