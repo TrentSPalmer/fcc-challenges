@@ -26,7 +26,8 @@ $(document).ready(function () {
       makeVolumeSelection('( cancel -- back )');
     } else if (e.keyCode === 27 && metronomeMenuDisplayed) {
       makeMetronomeSelection('( cancel -- back )');
-    } else if ([37,38,39,40].includes(e.keyCode)) {
+    } else if (e.keyCode === 86) {
+      $('#volume .ui-slider-handle').focus();
     }
   });
 
