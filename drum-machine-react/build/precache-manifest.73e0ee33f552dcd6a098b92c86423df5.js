@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2da02ffc77e16c34300f260fef06064f",
+    "revision": "080f32a16b2728653419186920d04ae8",
     "url": "/fcc-challenges/drum-machine-react/build/index.html"
   },
   {
-    "revision": "574a193aed7da5eeba28",
-    "url": "/fcc-challenges/drum-machine-react/build/static/css/main.b8f71121.chunk.css"
+    "revision": "664c13bacbd4e8857c5d",
+    "url": "/fcc-challenges/drum-machine-react/build/static/css/main.427da8b6.chunk.css"
   },
   {
     "revision": "a74eb87d4ecb8678a8f9",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fcc-challenges/drum-machine-react/build/static/js/2.4bb003c3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "574a193aed7da5eeba28",
+    "revision": "664c13bacbd4e8857c5d",
     "url": "/fcc-challenges/drum-machine-react/build/static/js/main.918fd14d.chunk.js"
   },
   {

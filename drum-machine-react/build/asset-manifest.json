@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fcc-challenges/drum-machine-react/build/static/css/main.b8f71121.chunk.css",
+    "main.css": "/fcc-challenges/drum-machine-react/build/static/css/main.427da8b6.chunk.css",
     "main.js": "/fcc-challenges/drum-machine-react/build/static/js/main.918fd14d.chunk.js",
     "main.js.map": "/fcc-challenges/drum-machine-react/build/static/js/main.918fd14d.chunk.js.map",
     "runtime-main.js": "/fcc-challenges/drum-machine-react/build/static/js/runtime-main.6e36f512.js",
@@ -8,15 +8,15 @@
     "static/js/2.4bb003c3.chunk.js": "/fcc-challenges/drum-machine-react/build/static/js/2.4bb003c3.chunk.js",
     "static/js/2.4bb003c3.chunk.js.map": "/fcc-challenges/drum-machine-react/build/static/js/2.4bb003c3.chunk.js.map",
     "index.html": "/fcc-challenges/drum-machine-react/build/index.html",
-    "precache-manifest.ab42c899dc151e284d1357ba0a529563.js": "/fcc-challenges/drum-machine-react/build/precache-manifest.ab42c899dc151e284d1357ba0a529563.js",
+    "precache-manifest.73e0ee33f552dcd6a098b92c86423df5.js": "/fcc-challenges/drum-machine-react/build/precache-manifest.73e0ee33f552dcd6a098b92c86423df5.js",
     "service-worker.js": "/fcc-challenges/drum-machine-react/build/service-worker.js",
-    "static/css/main.b8f71121.chunk.css.map": "/fcc-challenges/drum-machine-react/build/static/css/main.b8f71121.chunk.css.map",
+    "static/css/main.427da8b6.chunk.css.map": "/fcc-challenges/drum-machine-react/build/static/css/main.427da8b6.chunk.css.map",
     "static/js/2.4bb003c3.chunk.js.LICENSE.txt": "/fcc-challenges/drum-machine-react/build/static/js/2.4bb003c3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6e36f512.js",
     "static/js/2.4bb003c3.chunk.js",
-    "static/css/main.b8f71121.chunk.css",
+    "static/css/main.427da8b6.chunk.css",
     "static/js/main.918fd14d.chunk.js"
   ]
 }
