@@ -1,3 +1,11 @@
+:root {
+  --global-first-color: #756d58;
+  --global-second-color: #586075;
+  --global-third-color: #607558;
+  --global-fourth-color: #6d5875;
+  --global-black-color: #333333;
+}
+
 body {
   overflow: hidden;
   height: 100vh;
@@ -5,7 +13,7 @@ body {
 }
 
 .tool-tip-class {
-  background-color: #756d58;
+  background-color: var(--global-first-color);
   font-size: 2rem;
   font-style: oblique;
   border-color: black !important;
@@ -23,7 +31,7 @@ body {
 }
 
 #drum-machine {
-  background-color: #756d58;
+  background-color: var(--global-first-color);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -31,7 +39,7 @@ body {
 }
 
 #display {
-  background-color: #586075;
+  background-color: var(--global-second-color);
   margin: auto;
   height: 70vh;
   min-height: 400px;
@@ -77,7 +85,7 @@ body {
 
 #drum-pad-grid {
   margin: auto;
-  background-color: #607558;
+  background-color: var(--global-third-color);
   border-radius: 1rem;
   width: 54vh;
   height: 45vh;
@@ -97,7 +105,7 @@ body {
 .drum-pad {
   border-radius: 1rem;
   width: 33%;
-  background-color: #6d5875;
+  background-color: var(--global-fourth-color);
   border: black;
   border-width: 2px; 
   border-style: solid; 
@@ -117,7 +125,7 @@ body {
 
 .selectionMenu {
   margin: auto;
-  background-color: #607558;
+  background-color: var(--global-third-color);
   border-radius: 1rem;
   width: 54vh;
   height: 45vh;
@@ -125,13 +133,13 @@ body {
   flex-direction: column;
   flex: 1;
   overflow: auto;
-  scrollbar-color: black #6d5875;
+  scrollbar-color: black var(--global-fourth-color);
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .selectionMenu::-webkit-scrollbar {
-  background-color: #6d5875;
+  background-color: var(--global-fourth-color);
 }
 
 .selectionMenu::-webkit-scrollbar-thumb {
@@ -140,7 +148,7 @@ body {
 
 .selectionMenuItem, .volumeSelectionMenuItem, .metronomeSelectionMenuItem {
   min-height: min-content;
-  background-color: #6d5875;
+  background-color: var(--global-fourth-color);
   margin: 10px 20px 20px 10px;
   padding: 15px;
   border-radius: 1rem;
@@ -197,7 +205,7 @@ body {
   min-width: 110px;
   height: 12vh;
   min-height: 80px;
-  background-color: #6d5875;
+  background-color: var(--global-fourth-color);
   border-radius: 1rem;
   border-width: 2px; 
   border-style: solid; 
@@ -227,13 +235,13 @@ body {
   margin-bottom: 13px;
   height: 205px;
   width: 4px;
-  background: #333333;
+  background: var(--global-black-color);
   border-radius: 4px;
   border: none;
 }
 
 #volume > .ui-slider-range {
-  background: #333333;
+  background: var(--global-black-color);
   border: none;
   outline: none;
 }
@@ -245,18 +253,18 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 30px;
-  background: #333333;
+  background: var(--global-black-color);
   cursor: pointer;
   outline: none;
 }
 
 i.fa-volume-down {
-  color: #333333;
+  color: var(--global-black-color);
   margin-left: -5px;
 }
 
 i.fa-volume-up {
-  color: #333333;
+  color: var(--global-black-color);
   margin-left: -5px;
 }
 
@@ -434,6 +442,7 @@ i.fa-volume-up {
     padding: unset;
   }
 }
+
 @media (orientation: landscape) and (max-device-height: 767px) {
   #drum-pad-grid {
     min-width: unset;
