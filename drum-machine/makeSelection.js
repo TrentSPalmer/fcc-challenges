@@ -48,8 +48,13 @@ const makeMetronomeSelection = (selection) => {
     makeAudioControl(padSelectingFor);
     makeMetronomeIcons(padSelectingFor);
   } else if (selection === '( cancel -- back )') {
-    metronomeMenuDisplayed = false;
-    $('#display-middle-left-b').html((drumPadGrid));
+    if (padSelectingFor === '') {
+      metronomeMenuDisplayed = false;
+      $('#display-middle-left-b').html((drumPadGrid));
+    } else {
+      padSelectingFor = '';
+      showKeyMetronomeSelectionMenu();
+    }
   }
 };
 
@@ -112,8 +117,13 @@ const makeVolumeSelection = (selection) => {
     volumeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
   } else if (selection === '( cancel -- back )') {
-    volumeMenuDisplayed = false;
-    $('#display-middle-left-b').html((drumPadGrid));
+    if (padSelectingFor === '') {
+      volumeMenuDisplayed = false;
+      $('#display-middle-left-b').html((drumPadGrid));
+    } else {
+      padSelectingFor = '';
+      showKeyVolumeSelectionMenu();
+    }
   }
 };
 

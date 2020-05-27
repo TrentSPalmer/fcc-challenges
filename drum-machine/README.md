@@ -10,9 +10,8 @@
 
 ### TODOS
 
-* increase granularity of esc key function in selection menus back navigation
+* fix toolstips for menuselectionitems
 * add focus() to selectionMenuItems so that you can immediately begin scrolling with arrow keys
 * add tip for scrolling selectionMenuItems
 * make sure metronome continues on volume, sound, or metronome BPM change
 * add additional metronome speed values
-* fix toolstips for menuselectionitems
