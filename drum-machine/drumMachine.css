@@ -135,24 +135,28 @@ body {
 .selectionMenu {
   margin: auto;
   background-color: var(--global-third-color);
-  border-radius: 1rem;
+  border-radius: 5px;
   width: 54vh;
   height: 45vh;
   display: flex;
   flex-direction: column;
   flex: 1;
   overflow: auto;
-  scrollbar-color: black var(--global-fourth-color);
+  scrollbar-color: var(--global-black-color) var(--global-second-color);
+  scrollbar-width: thin;
   padding-top: 10px;
   padding-bottom: 10px;
+  direction: rtl;
 }
 
 .selectionMenu::-webkit-scrollbar {
-  background-color: var(--global-fourth-color);
+  background-color: var(--global-third-color);
+  border-radius: 5px;
 }
 
 .selectionMenu::-webkit-scrollbar-thumb {
-  background-color: black;
+  background-color: var(--global-black-color);
+  border-radius: 5px;
 }
 
 .selectionMenuItem, .volumeSelectionMenuItem, .metronomeSelectionMenuItem {
