@@ -97,9 +97,13 @@ const showMetronomeSelectionMenuItems = (menuItems) => {
 
 const makeMetronomeSelectionMenuItemToolTipContent = (text) => {
   if (padsArray.includes(text)) {
-    return sessionStorage.getItem(text + 'isMetronome') === "false" ? 'Metronome Off' : sessionStorage.getItem(text + 'metronomeTempo');
+    return 'set metronome tempo for ' + text + ' (or disable)';
+  } else if (text === 'Metronome Off') {
+    return 'turn metronome off for ' + padSelectingFor;
   } else if (text === '( cancel -- back )') {
     return text;
+  } else {
+    return 'set metronome temp for ' + padSelectingFor + ': ' + text.split(':')[1];
   }
 }
 
@@ -165,9 +169,11 @@ const showVolumeSelectionMenuItems = (menuItems) => {
 
 const makeVolumeSelectionMenuItemToolTipContent = (text) => {
   if (padsArray.includes(text)) {
-    return 'volume offset for ' + text;
+    return 'set volume offset for ' + text;
   } else if (text === '( cancel -- back )') {
     return text;
+  } else {
+    return  'set volume offset for ' + padSelectingFor + ': '+ text;
   }
 }
 

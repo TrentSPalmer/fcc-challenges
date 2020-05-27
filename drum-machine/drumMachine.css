@@ -170,6 +170,7 @@ body {
   text-align: center;
   font-style: bold;
   font-size: 1.6rem;
+  direction: ltr;
 }
 
 .selectionMenuItem:active, .volumeSelectionMenuItem:active, .metronomeSelectionMenuItem:active {
