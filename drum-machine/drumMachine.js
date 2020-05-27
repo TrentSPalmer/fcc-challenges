@@ -80,6 +80,8 @@ $(document).ready(function () {
   padsArray.forEach(pad => {
     makeMetronomeIcons(pad);
   });
+
+  $('#display-top').html('<p id="volumeTip">press "V" to focus Volume so you can adjust with arrow keys</p>');
 });
 
 const makeMetronomeIcons = (pad) => {
@@ -110,7 +112,7 @@ const qweasdzxc = [81,87,69,65,83,68,90,88,67];
 
 const playSample = (key) => {
   const audioFileText = $('#'+key[0]).attr('src').slice(36)
-  $('#display-top').html(key[0] +": " + audioFileText.replace(/\//g,' ').replace(/-/g,'&#8209;'));
+  $('#display-top').html( "<p>" + key[0] +": " + audioFileText.replace(/\//g,' ').replace(/-/g,'&#8209;') + "</p>");
   if (sessionStorage.getItem(key[0] + 'isMetronome') === 'false') {
     const keyDuration = 1000;
     const sound = document.getElementById(key[0]);
