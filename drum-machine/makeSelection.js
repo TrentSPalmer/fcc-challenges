@@ -32,9 +32,11 @@ const makeMetronomeSelection = (selection) => {
     drumPadGrid = document.getElementById('drum-pad-grid');
     metronomeMenuDisplayed = true;
     showKeyMetronomeSelectionMenu();
+    $('#metronomeSelectionMenu').attr("tabindex",0).focus();
   } else if (padsArray.includes(selection)) {
     padSelectingFor = selection;
     showMetronomeMenu();
+    $('#metronomeSelectionMenu').attr("tabindex",0).focus();
   } else if (selection === 'Metronome Off') {
     sessionStorage.setItem(padSelectingFor + 'isMetronome',false);
     metronomeMenuDisplayed = false;
@@ -54,6 +56,7 @@ const makeMetronomeSelection = (selection) => {
     } else {
       padSelectingFor = '';
       showKeyMetronomeSelectionMenu();
+      $('#metronomeSelectionMenu').attr("tabindex",0).focus();
     }
   }
 };
@@ -113,9 +116,11 @@ const makeVolumeSelection = (selection) => {
     drumPadGrid = document.getElementById('drum-pad-grid');
     volumeMenuDisplayed = true;
     showKeyVolumeSelectionMenu();
+    $('#volumeSelectionMenu').attr("tabindex",0).focus();
   } else if (padsArray.includes(selection)) {
     padSelectingFor = selection;
     showVolumeMenu();
+    $('#volumeSelectionMenu').attr("tabindex",0).focus();
   } else if (volumeMenuArray.includes(selection)) {
     sessionStorage.setItem((padSelectingFor + 'volume'),selection);
     volumeMenuDisplayed = false;
@@ -127,6 +132,7 @@ const makeVolumeSelection = (selection) => {
     } else {
       padSelectingFor = '';
       showKeyVolumeSelectionMenu();
+      $('#volumeSelectionMenu').attr("tabindex",0).focus();
     }
   }
 };
@@ -185,6 +191,7 @@ const makeSelection = (selection) => {
     drumPadGrid = document.getElementById('drum-pad-grid');
     menuDisplayed = true;
     showKeySelectionMenu();
+    $('#selectionMenu').attr("tabindex",0).focus();
   } else if (padsArray.includes(selection)) {
     padSelectingFor = selection;
     showFirstDirMenu();
@@ -192,10 +199,13 @@ const makeSelection = (selection) => {
     fileStringArray.push(selection);
     if (fileStringArray.length === 1) {
       showSecondDirMenu();
+      $('#selectionMenu').attr("tabindex",0).focus();
     } else if (fileStringArray.length === 2) {
       showThirdDirMenu();
+      $('#selectionMenu').attr("tabindex",0).focus();
     } else {
       showFourthDirMenu();
+      $('#selectionMenu').attr("tabindex",0).focus();
     }
   } else if (selection.substring(selection.length - 4) === '.wav') {
     fileStringArray.push(selection);
@@ -211,6 +221,7 @@ const makeSelection = (selection) => {
       } else {
         padSelectingFor = '';
         showKeySelectionMenu();
+        $('#selectionMenu').attr("tabindex",0).focus();
       }
     } else if (fileStringArray.length === 1) {
       fileStringArray = [];
@@ -218,9 +229,11 @@ const makeSelection = (selection) => {
     } else if (fileStringArray.length === 2)  {
       fileStringArray.pop();
       showSecondDirMenu();
+      $('#selectionMenu').attr("tabindex",0).focus();
     } else if (fileStringArray.length === 3)  {
       fileStringArray.pop();
       showThirdDirMenu();
+      $('#selectionMenu').attr("tabindex",0).focus();
     }
   }
 };
