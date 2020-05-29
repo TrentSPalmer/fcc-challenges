@@ -10,6 +10,6 @@
 
 ### TODOS
 
-* add tip for scrolling selectionMenuItems
 * make sure metronome continues on volume, sound, or metronome BPM change
 * add additional metronome speed values
+* update bpm in drumpad when metronome playing

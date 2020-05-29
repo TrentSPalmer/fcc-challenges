@@ -65,6 +65,10 @@ body {
   margin-top: -10px;
 }
 
+#menuScrollTip {
+  padding-top: 20px;
+}
+
 #display-middle {
   flex-basis: 62%;
   width: 100%;
@@ -348,7 +352,7 @@ i.fa-volume-up {
     margin-right: auto;
   }
 
-  #select-volume, #display-middle-right-f, #display-middle-right-g, #volumeTip {
+  #select-volume, #display-middle-right-f, #display-middle-right-g, #volumeTip, #menuScrollTip {
     display: none;
   }
 
@@ -437,7 +441,7 @@ i.fa-volume-up {
     margin-right: auto;
   }
 
-  #select-volume, #display-middle-right-f, #display-middle-right-g, #volumeTip {
+  #select-volume, #display-middle-right-f, #display-middle-right-g, #volumeTip, #menuScrollTip {
     display: none;
   }
 

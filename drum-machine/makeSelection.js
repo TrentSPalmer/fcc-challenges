@@ -33,6 +33,7 @@ const makeMetronomeSelection = (selection) => {
     metronomeMenuDisplayed = true;
     showKeyMetronomeSelectionMenu();
     $('#metronomeSelectionMenu').attr("tabindex",0).focus();
+    $('#display-top').append('<p id="menuScrollTip">scroll menu with arrow keys or PgUpDn, "esc" key to go back</p>');
   } else if (padsArray.includes(selection)) {
     padSelectingFor = selection;
     showMetronomeMenu();
@@ -41,18 +42,21 @@ const makeMetronomeSelection = (selection) => {
     sessionStorage.setItem(padSelectingFor + 'isMetronome',false);
     metronomeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
+    $('#menuScrollTip').remove();
     makeAudioControl(padSelectingFor);
   } else if (selection.includes('bpm')) {
     sessionStorage.setItem(padSelectingFor + 'metronomeTempo',selection);
     sessionStorage.setItem(padSelectingFor + 'isMetronome',true);
     metronomeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
+    $('#menuScrollTip').remove();
     makeAudioControl(padSelectingFor);
     makeMetronomeIcons(padSelectingFor);
   } else if (selection === '( cancel -- back )') {
     if (padSelectingFor === '') {
       metronomeMenuDisplayed = false;
       $('#display-middle-left-b').html((drumPadGrid));
+      $('#menuScrollTip').remove();
     } else {
       padSelectingFor = '';
       showKeyMetronomeSelectionMenu();
@@ -117,6 +121,7 @@ const makeVolumeSelection = (selection) => {
     volumeMenuDisplayed = true;
     showKeyVolumeSelectionMenu();
     $('#volumeSelectionMenu').attr("tabindex",0).focus();
+    $('#display-top').append('<p id="menuScrollTip">scroll menu with arrow keys or PgUpDn, "esc" key to go back</p>');
   } else if (padsArray.includes(selection)) {
     padSelectingFor = selection;
     showVolumeMenu();
@@ -125,10 +130,12 @@ const makeVolumeSelection = (selection) => {
     sessionStorage.setItem((padSelectingFor + 'volume'),selection);
     volumeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
+    $('#menuScrollTip').remove();
   } else if (selection === '( cancel -- back )') {
     if (padSelectingFor === '') {
       volumeMenuDisplayed = false;
       $('#display-middle-left-b').html((drumPadGrid));
+      $('#menuScrollTip').remove();
     } else {
       padSelectingFor = '';
       showKeyVolumeSelectionMenu();
@@ -192,13 +199,16 @@ const makeSelection = (selection) => {
     menuDisplayed = true;
     showKeySelectionMenu();
     $('#selectionMenu').attr("tabindex",0).focus();
+    $('#display-top').append('<p id="menuScrollTip">scroll menu with arrow keys or PgUpDn, "esc" key to go back</p>');
   } else if (padsArray.includes(selection)) {
     padSelectingFor = selection;
     showFirstDirMenu();
+    $('#menuScrollTip').remove();
   } else if (selection.substring(selection.length - 4) !== '.wav' && selection !== '( cancel -- back )') {
     fileStringArray.push(selection);
     if (fileStringArray.length === 1) {
       showSecondDirMenu();
+      $('#display-top').append('<p id="menuScrollTip">scroll menu with arrow keys or PgUpDn, "esc" key to go back</p>');
       $('#selectionMenu').attr("tabindex",0).focus();
     } else if (fileStringArray.length === 2) {
       showThirdDirMenu();
@@ -212,20 +222,24 @@ const makeSelection = (selection) => {
     sessionStorage.setItem(padSelectingFor,fileStringArray.join('/'));
     menuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
+    $('#menuScrollTip').remove();
     makeAudioControl(padSelectingFor);
   } else if (selection === '( cancel -- back )') {
     if (fileStringArray.length === 0) {
       if (padSelectingFor === '') {
         menuDisplayed = false;
         $('#display-middle-left-b').html((drumPadGrid));
+        $('#menuScrollTip').remove();
       } else {
         padSelectingFor = '';
         showKeySelectionMenu();
         $('#selectionMenu').attr("tabindex",0).focus();
+        $('#display-top').append('<p id="menuScrollTip">scroll menu with arrow keys or PgUpDn, "esc" key to go back</p>');
       }
     } else if (fileStringArray.length === 1) {
       fileStringArray = [];
       showFirstDirMenu();
+      $('#menuScrollTip').remove();
     } else if (fileStringArray.length === 2)  {
       fileStringArray.pop();
       showSecondDirMenu();
