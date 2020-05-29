@@ -9,5 +9,3 @@
 * [FreeCodeCamp Section](https://www.freecodecamp.org/learn/front-end-libraries/front-end-libraries-projects)
 
 ### TODOS
-
-* make sure metronome continues on volume, sound, or metronome BPM change

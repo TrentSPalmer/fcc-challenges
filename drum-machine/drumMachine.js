@@ -138,16 +138,30 @@ const playSample = (key) => {
 const metronome = (key) => {
   let keyDuration = parseInt(sessionStorage.getItem(key+'metronomeTempo'));
   const sound = document.getElementById(key);
+  const soundFile = sound.src.slice(36);
+  const volumeOffSet = sessionStorage.getItem(key+'volume');
   sound.volume = getVolume(key);
   sound.play();
   let refreshMetronome = setInterval(function(){
-    keyDuration = parseInt(sessionStorage.getItem(key+'metronomeTempo'));
+    const newKeyDuration = parseInt(sessionStorage.getItem(key+'metronomeTempo'));
     sound.pause();
     sound.currentTime = 0;
     sound.volume = getVolume(key);
     sound.play();
+    if (volumeOffSet !== sessionStorage.getItem(key+'volume')) {
+      clearInterval(refreshMetronome);
+      metronome(key);
+    }
+    if (soundFile !== sessionStorage.getItem(key)) {
+      clearInterval(refreshMetronome);
+      metronome(key);
+    }
     if (sessionStorage.getItem(key + 'metronomeIsPlaying') === 'false') {
       clearInterval(refreshMetronome);
+    }
+    if (newKeyDuration !== keyDuration) {
+      clearInterval(refreshMetronome);
+      metronome(key);
     }
   },keyDuration);
 };

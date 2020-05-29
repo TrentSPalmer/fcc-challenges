@@ -15,6 +15,7 @@ const volumeMenuArray = ['+30','+20','+10','0','-10','-20','-30'];
 const stopMetronomes = () => {
   padsArray.forEach(pad => {
     sessionStorage.setItem(pad + 'metronomeIsPlaying', 'false');
+    makeMetronomeIcons(pad);
   });
 };
 
@@ -43,14 +44,13 @@ const makeMetronomeSelection = (selection) => {
     metronomeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
     $('#menuScrollTip').remove();
-    makeAudioControl(padSelectingFor);
+    makeMetronomeIcons(padSelectingFor);
   } else if (selection.match(/\d{2,3}/)) {
     sessionStorage.setItem(padSelectingFor + 'metronomeTempo',Math.round(60000 / parseInt(selection.split(':')[1])));
     sessionStorage.setItem(padSelectingFor + 'isMetronome',true);
     metronomeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
     $('#menuScrollTip').remove();
-    makeAudioControl(padSelectingFor);
     makeMetronomeIcons(padSelectingFor);
   } else if (selection === '( cancel -- back )') {
     if (padSelectingFor === '') {
@@ -230,7 +230,7 @@ const makeSelection = (selection) => {
     menuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
     $('#menuScrollTip').remove();
-    makeAudioControl(padSelectingFor);
+    makeMetronomeIcons(padSelectingFor);
   } else if (selection === '( cancel -- back )') {
     if (fileStringArray.length === 0) {
       if (padSelectingFor === '') {
