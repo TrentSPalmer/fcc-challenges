@@ -164,8 +164,7 @@ const metronome = (key) => {
 };
 
 const parseBPM = (key) => {
-  const bpm = parseInt(sessionStorage
-    .getItem(key+'metronomeTempo').slice(-10).split(' ')[1]);
+  const bpm = parseInt(sessionStorage.getItem(key+'metronomeTempo'));
   return Math.round(60000 / bpm);
 };
 
@@ -191,7 +190,7 @@ const initialSamples = () => {
       sessionStorage.setItem(pad + "metronomeIsPlaying",false);
     }
     if (!sessionStorage.hasOwnProperty(pad + "metronomeTempo")) {
-      sessionStorage.setItem(pad + "metronomeTempo","Andante: 92 bpm");
+      sessionStorage.setItem(pad + "metronomeTempo","92");
     }
   });
   if (!sessionStorage.hasOwnProperty("Q")) {

@@ -44,8 +44,8 @@ const makeMetronomeSelection = (selection) => {
     $('#display-middle-left-b').html((drumPadGrid));
     $('#menuScrollTip').remove();
     makeAudioControl(padSelectingFor);
-  } else if (selection.includes('bpm')) {
-    sessionStorage.setItem(padSelectingFor + 'metronomeTempo',selection);
+  } else if (selection.match(/\d{2,3}/)) {
+    sessionStorage.setItem(padSelectingFor + 'metronomeTempo',selection.split(':')[1]);
     sessionStorage.setItem(padSelectingFor + 'isMetronome',true);
     metronomeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
@@ -67,7 +67,14 @@ const makeMetronomeSelection = (selection) => {
 
 const showMetronomeMenu = () => {
   const selectionMenu = Object.keys(metronomeTempos)
-    .map(item => (makeMetronomeSelectionMenuItem(item + ": " + metronomeTempos[item])));
+    .map(item => (makeMetronomeSelectionMenuItem((() => {
+      const metronomeStringArray = item.split(' ');
+      if (metronomeStringArray.length === 2) {
+        return metronomeStringArray[0] + ': ' + metronomeTempos[item].slice(0,-4);
+      } else {
+        return metronomeStringArray[0] + ' ' + metronomeStringArray[1] + ': ' + metronomeTempos[item].slice(0,-4);
+      }
+    })())));
 
   selectionMenu.unshift(makeMetronomeSelectionMenuItem('Metronome Off'));
   showMetronomeSelectionMenuItems(selectionMenu);
@@ -110,7 +117,7 @@ const makeMetronomeSelectionMenuItemToolTipContent = (text) => {
   } else if (text === '( cancel -- back )') {
     return text;
   } else {
-    return 'set metronome temp for ' + padSelectingFor + ': ' + text.split(':')[1];
+    return 'set metronome temp for ' + padSelectingFor + ': ' + text.split(':')[1] + ' bpm';
   }
 }
 
