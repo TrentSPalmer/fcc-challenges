@@ -16,7 +16,7 @@ const stopMetronomes = () => {
   padsArray.forEach(pad => {
     sessionStorage.setItem(pad + 'metronomeIsPlaying', 'false');
   });
-}
+};
 
 const reset = () => {
   sessionStorage.clear();
@@ -45,7 +45,7 @@ const makeMetronomeSelection = (selection) => {
     $('#menuScrollTip').remove();
     makeAudioControl(padSelectingFor);
   } else if (selection.match(/\d{2,3}/)) {
-    sessionStorage.setItem(padSelectingFor + 'metronomeTempo',selection.split(':')[1]);
+    sessionStorage.setItem(padSelectingFor + 'metronomeTempo',Math.round(60000 / parseInt(selection.split(':')[1])));
     sessionStorage.setItem(padSelectingFor + 'isMetronome',true);
     metronomeMenuDisplayed = false;
     $('#display-middle-left-b').html((drumPadGrid));
@@ -119,7 +119,7 @@ const makeMetronomeSelectionMenuItemToolTipContent = (text) => {
   } else {
     return 'set metronome temp for ' + padSelectingFor + ': ' + text.split(':')[1] + ' bpm';
   }
-}
+};
 
 const makeVolumeSelection = (selection) => {
   if (selection === "keys") {
@@ -195,7 +195,7 @@ const makeVolumeSelectionMenuItemToolTipContent = (text) => {
   } else {
     return  'set volume offset for ' + padSelectingFor + ': '+ text;
   }
-}
+};
 
 const makeSelection = (selection) => {
 
@@ -334,7 +334,7 @@ const makeSelectionMenuItemToolTipContent = (text) => {
   } else {
     return 'select for ' + padSelectingFor + ': ' + fileStringArray.join('/') + '/' + text;
   }
-}
+};
 
 const makeSelectionMenuItem = (selector) => {
   return '<div id="foo" class="selectionMenuItem" title="">' + selector + '</div>';

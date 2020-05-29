@@ -2,8 +2,7 @@ $(document).ready(function () {
 
   initialSamples();
 
-  let volume = sessionStorage.hasOwnProperty("volume") ?
-    parseInt(sessionStorage.getItem('volume')) : 20;
+  let volume = sessionStorage.hasOwnProperty("volume") ? parseInt(sessionStorage.getItem('volume')) : 20;
 
   $('#volume').slider({
     orientation: "vertical",
@@ -32,7 +31,7 @@ $(document).ready(function () {
   });
 
   padsArray.forEach(pad => {
-    makeAudioControl(pad);
+    makeMetronomeIcons(pad);
   });
 
   makeVolumeToolTip('#display-middle-right-f');
@@ -77,19 +76,8 @@ $(document).ready(function () {
     stopMetronomes();
   });
 
-  padsArray.forEach(pad => {
-    makeMetronomeIcons(pad);
-  });
-
   $('#display-top').html('<p id="volumeTip">press "V" to focus Volume so you can adjust with arrow keys</p>');
 });
-
-const makeMetronomeIcons = (pad) => {
-  const html = $('#'+pad+'pad').html();
-  if (sessionStorage.getItem(pad + 'isMetronome') === 'true') {
-    $('#'+pad+'pad').html('<p>' + html + ' <i class="fa fa-refresh"></i></p>');
-  }
-};
 
 const makeVolumeToolTip = (element) => {
   $(element).tooltip({
@@ -103,15 +91,15 @@ const makeVolumeToolTip = (element) => {
 };
 
 const makeAudioControl = (pad) => {
-  const audioControl = pad + '<audio class="clip" id="'+pad+'" src="'+sampleUrlPreFix+sessionStorage.getItem(pad)+'"></audio>';
-  $('#'+pad+'pad').html(audioControl);
+  const audioControl = '<audio class="clip" id="'+pad+'" src="'+sampleUrlPreFix+sessionStorage.getItem(pad)+'"></audio>';
+  $('#'+pad+'pad').html(pad + audioControl);
 };
 
-const sampleUrlPreFix = "https://trentpalmer.org/drumsamples/"
+const sampleUrlPreFix = "https://trentpalmer.org/drumsamples/";
 const qweasdzxc = [81,87,69,65,83,68,90,88,67];
 
 const playSample = (key) => {
-  const audioFileText = $('#'+key[0]).attr('src').slice(36)
+  const audioFileText = $('#'+key[0]).attr('src').slice(36);
   $('#display-top').html( "<p>" + key[0] +": " + audioFileText.replace(/\//g,' ').replace(/-/g,'&#8209;') + "</p>");
   if (sessionStorage.getItem(key[0] + 'isMetronome') === 'false') {
     const keyDuration = 1000;
@@ -142,17 +130,18 @@ const playSample = (key) => {
     metronome(key[0]);
     sessionStorage.setItem(key[0]+'metronomeIsPlaying',
       (sessionStorage.getItem(key[0]+'metronomeIsPlaying')
-        === 'false' ? 'true' : 'false'));
+        === 'false' ? true : false));
+    makeMetronomeIcons(key[0]);
   }
 };
 
 const metronome = (key) => {
-  let keyDuration = parseBPM(key);
+  let keyDuration = parseInt(sessionStorage.getItem(key+'metronomeTempo'));
   const sound = document.getElementById(key);
   sound.volume = getVolume(key);
   sound.play();
   let refreshMetronome = setInterval(function(){
-    keyDuration = parseBPM(key);
+    keyDuration = parseInt(sessionStorage.getItem(key+'metronomeTempo'));
     sound.pause();
     sound.currentTime = 0;
     sound.volume = getVolume(key);
@@ -163,9 +152,16 @@ const metronome = (key) => {
   },keyDuration);
 };
 
-const parseBPM = (key) => {
-  const bpm = parseInt(sessionStorage.getItem(key+'metronomeTempo'));
-  return Math.round(60000 / bpm);
+const makeMetronomeIcons = (pad) => {
+  makeAudioControl(pad);
+  const html = $('#'+pad+'pad').html();
+  if (sessionStorage.getItem(pad + 'isMetronome') === 'true') {
+    if (sessionStorage.getItem(pad + 'metronomeIsPlaying') === 'false') {
+      $('#'+pad+'pad').html('<p>' + html + ' <i class="fa fa-refresh"></i></p>');
+    } else {
+      $('#'+pad+'pad').html('<p>' + html + ' ' + Math.round(60000 / parseInt(sessionStorage.getItem(pad+'metronomeTempo'))) + '</p>');
+    }
+  }
 };
 
 const getVolume = (key) => {
@@ -190,7 +186,7 @@ const initialSamples = () => {
       sessionStorage.setItem(pad + "metronomeIsPlaying",false);
     }
     if (!sessionStorage.hasOwnProperty(pad + "metronomeTempo")) {
-      sessionStorage.setItem(pad + "metronomeTempo","92");
+      sessionStorage.setItem(pad + "metronomeTempo","652");
     }
   });
   if (!sessionStorage.hasOwnProperty("Q")) {
@@ -220,4 +216,4 @@ const initialSamples = () => {
   if (!sessionStorage.hasOwnProperty("C")) {
     sessionStorage.setItem("C","Assorted-Hits/Snares/Ludwig-A/CYCdh_LudSnrOffA-08.wav");
   }
-}
+};

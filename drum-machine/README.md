@@ -11,4 +11,3 @@
 ### TODOS
 
 * make sure metronome continues on volume, sound, or metronome BPM change
-* update bpm in drumpad when metronome playing
