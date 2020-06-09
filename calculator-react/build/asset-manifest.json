@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/fcc-challenges/calculator-react/build/static/css/main.1b8ac635.chunk.css",
+    "main.js": "/fcc-challenges/calculator-react/build/static/js/main.bfd616ae.chunk.js",
+    "main.js.map": "/fcc-challenges/calculator-react/build/static/js/main.bfd616ae.chunk.js.map",
+    "runtime-main.js": "/fcc-challenges/calculator-react/build/static/js/runtime-main.bf967002.js",
+    "runtime-main.js.map": "/fcc-challenges/calculator-react/build/static/js/runtime-main.bf967002.js.map",
+    "static/js/2.07dbc1f4.chunk.js": "/fcc-challenges/calculator-react/build/static/js/2.07dbc1f4.chunk.js",
+    "static/js/2.07dbc1f4.chunk.js.map": "/fcc-challenges/calculator-react/build/static/js/2.07dbc1f4.chunk.js.map",
+    "index.html": "/fcc-challenges/calculator-react/build/index.html",
+    "precache-manifest.25ea6938318dfa689cefd0b87f019a55.js": "/fcc-challenges/calculator-react/build/precache-manifest.25ea6938318dfa689cefd0b87f019a55.js",
+    "service-worker.js": "/fcc-challenges/calculator-react/build/service-worker.js",
+    "static/css/main.1b8ac635.chunk.css.map": "/fcc-challenges/calculator-react/build/static/css/main.1b8ac635.chunk.css.map",
+    "static/js/2.07dbc1f4.chunk.js.LICENSE.txt": "/fcc-challenges/calculator-react/build/static/js/2.07dbc1f4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf967002.js",
+    "static/js/2.07dbc1f4.chunk.js",
+    "static/css/main.1b8ac635.chunk.css",
+    "static/js/main.bfd616ae.chunk.js"
+  ]
+}
