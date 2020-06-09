@@ -1,7 +1,7 @@
 ### Calculator-React Project Links
 
 * [GitHub Page View of this Repo](https://trentspalmer.github.io/fcc-challenges)
-* [GitHub Page View of this Project (drum-machine-react)](https://trentspalmer.github.io/fcc-challenges/calculator-react/build)
+* [GitHub Page View of this Project (calculator-react)](https://trentspalmer.github.io/fcc-challenges/calculator-react/build)
 
 ### FreeCodeCamp Links
 
