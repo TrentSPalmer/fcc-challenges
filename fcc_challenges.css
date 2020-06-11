@@ -49,7 +49,7 @@ div {
 }
 
 .attachment-full {
-  position: absolute;
+  position: fixed;
   right: 0px;
   height: 149px;
   width: 149px;
@@ -60,7 +60,7 @@ div {
   border: none;
   width: 149px;
   height: 0px;
-  position: absolute;
+  position: fixed;
   right: 0px;
   margin-top: -10px;
 }
