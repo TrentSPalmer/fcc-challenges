@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/fcc-challenges/pomodoro-clock-react/build/static/css/main.1b8ac635.chunk.css",
+    "main.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/main.157adc9f.chunk.js",
+    "main.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/main.157adc9f.chunk.js.map",
+    "runtime-main.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/runtime-main.601eb45a.js",
+    "runtime-main.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/runtime-main.601eb45a.js.map",
+    "static/js/2.9a920135.chunk.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.9a920135.chunk.js",
+    "static/js/2.9a920135.chunk.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.9a920135.chunk.js.map",
+    "index.html": "/fcc-challenges/pomodoro-clock-react/build/index.html",
+    "precache-manifest.54ac6025f5b442b201d5113579ebf9b3.js": "/fcc-challenges/pomodoro-clock-react/build/precache-manifest.54ac6025f5b442b201d5113579ebf9b3.js",
+    "service-worker.js": "/fcc-challenges/pomodoro-clock-react/build/service-worker.js",
+    "static/css/main.1b8ac635.chunk.css.map": "/fcc-challenges/pomodoro-clock-react/build/static/css/main.1b8ac635.chunk.css.map",
+    "static/js/2.9a920135.chunk.js.LICENSE.txt": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.9a920135.chunk.js.LICENSE.txt",
+    "static/media/BeepSound.ogg": "/fcc-challenges/pomodoro-clock-react/build/static/media/BeepSound.049fe0d0.ogg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.601eb45a.js",
+    "static/js/2.9a920135.chunk.js",
+    "static/css/main.1b8ac635.chunk.css",
+    "static/js/main.157adc9f.chunk.js"
+  ]
+}
