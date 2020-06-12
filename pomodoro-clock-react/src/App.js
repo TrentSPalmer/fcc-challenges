@@ -62,7 +62,7 @@ class App extends React.Component {
       flexDirection: 'column',
       color: colors.ivoryBlack,
       overFlow: 'hidden',
-      fontFamily: 'Ubuntu sans-serif',
+      fontFamily: 'Ubuntu, sans-serif',
       fontSize: 48,
     };
 
