@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 
 import PomodoroClock from './PomodoroClock';
+import FullScreen from './FullScreen';
 
 import { colors } from './globals'
 
@@ -66,7 +67,7 @@ class App extends React.Component {
       fontSize: 48,
     };
 
-    if (width > height && height < 400) {
+    if (width > height && height < 450) {
       gitHubLabelStyle['width'] = 99;
       attachmentStyle['width'] = 99;
       attachmentStyle['height'] = 99;
@@ -90,6 +91,7 @@ class App extends React.Component {
       </img>
       </a>
       <PomodoroClock />
+      {  navigator.userAgent.includes('Mobile') && <FullScreen />  }
       </div>
     );
   };

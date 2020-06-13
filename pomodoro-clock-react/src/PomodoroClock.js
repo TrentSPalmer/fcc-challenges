@@ -39,12 +39,17 @@ class PomodoroClock extends React.Component {
       width: '100%',
     };
 
-    if (width > height && height < 400) {
+    if (width > height && height < 450) {
       style['height'] = '96vh';
       style['width'] = '75vw';
       style['margin'] = '1vh auto 3vh auto';
       style['fontSize'] = 24;
     } else if (height > width) {
+      if (height > (maxHeight + 179)) {
+        style['margin'] = 'auto';
+      } else {
+        style['margin'] = '99px 0 80px 0';
+      }
       style['height'] = Math.round(height * 0.75);
       style['maxHeight'] = maxHeight;
       clockContainerStyle['height'] = width > style['height'] ? style['height'] : width; 
@@ -56,7 +61,7 @@ class PomodoroClock extends React.Component {
 
     return(
       <div style={style}>
-        <div style={clockContainerStyle}>
+        <div id='clockContainer' style={clockContainerStyle}>
           <Top />
           <Clock />
           <Controls />
