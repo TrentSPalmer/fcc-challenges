@@ -1,4 +1,5 @@
 import React from 'react';
+import NoSleep from 'nosleep.js';
 import { connect } from "react-redux";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,6 +35,7 @@ class Controls extends React.Component {
     this.handleMouseEventReset = this.handleMouseEventReset.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleNoSleep = this.handleNoSleep.bind(this);
     this.state = {
       playColor: colors.ivoryBlack,
       pauseColor: colors.ivoryBlack,
@@ -42,11 +44,26 @@ class Controls extends React.Component {
     };
   };
 
+  handleNoSleep() {
+    if (navigator.userAgent.includes('Mobile')) {
+      const self = this;
+      var noSleep = new NoSleep();
+      noSleep.enable();
+      let refreshNoSleep = setInterval(function() {
+        if (!self.props.clockIsRunning) {
+          noSleep.disable();
+          clearInterval(refreshNoSleep);
+        }
+      },5000);
+    }
+  };
+
   handlePlay() {
     if (this.props.clockIsRunning) {
       this.props.clockIsRunningAction(false);
     } else {
       this.props.clockIsRunningAction(true);
+      this.handleNoSleep();
       const now = new Date();
       const nowSeconds = Math.floor(now.getTime() / 1000);
       const remainingTime = this.props.clock.split(':');
