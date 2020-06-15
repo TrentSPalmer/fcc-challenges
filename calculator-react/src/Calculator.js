@@ -86,6 +86,7 @@ class Calculator extends React.Component {
       style['marginRight'] = '89px';
     } else if (height > width) {
       style['height'] = '75vh';
+      style['minHeight'] = 481;
       style['width'] = '100vw';
       style['marginTop'] = '12vh';
       style['marginBottom'] = 'unset';
