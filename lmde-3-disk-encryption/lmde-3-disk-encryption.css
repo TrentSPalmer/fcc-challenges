@@ -109,7 +109,7 @@ button:active {
 }
 
 .attachment-full {
-  position: absolute;
+  position: fixed;
   right: 0px;
   height: 149px;
   width: 149px;
