@@ -44,6 +44,10 @@ html::-webkit-scrollbar-thumb {
   width: 4px;
 }
 
+.navbar {
+  direction: ltr;
+}
+
 .main-container {
   position: relative;
   margin-left: 38%;
@@ -87,10 +91,6 @@ h1 {
 h2 {
   font-size: 150%;
   color: #40916b;
-}
-
-h3 {
-  font-size: 125%;
 }
 
 button {
@@ -146,10 +146,10 @@ button:active {
     overflow-y: unset;
     top: unset;
     bottom: unset;
-    justify-content: flex-start;
+    justify-content: flex-end;
     width: 80%;
     min-width: unset;
-    margin-left: auto;
+    margin-left: 20%;
     margin-right: auto;
   }
 
@@ -172,13 +172,6 @@ button:active {
     overflow-x: scroll;
     overflow-y: hidden;
   }
-
-  h3 {
-    white-space: nowrap;
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
-
 }
 
 @media only screen and (max-width: 400px) {
@@ -198,11 +191,6 @@ button:active {
   h2 {
     font-size: 138%;
   }
-
-  h3 {
-    font-size: 114%;
-  }
-
 }
 
 @media (orientation: portrait) {
@@ -213,6 +201,20 @@ button:active {
 
   .githubLabel {
     width: 99px;
+  }
+
+  h1 {
+    font-size: x-large;
+  }
+
+  h2 {
+    font-size: large;
+  }
+}
+
+@media (orientation: portrait) and (max-width: 600px) {
+  .nav-container {
+    margin-left: auto;
   }
 }
 
