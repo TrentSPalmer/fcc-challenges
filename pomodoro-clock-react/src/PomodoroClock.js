@@ -53,6 +53,7 @@ class PomodoroClock extends React.Component {
       style['height'] = Math.round(height * 0.75);
       style['maxHeight'] = maxHeight;
       clockContainerStyle['height'] = width > style['height'] ? style['height'] : width; 
+      clockContainerStyle['minHeight'] = '340px';
       clockContainerStyle['maxHeight'] = maxHeight;
       style['width'] = width - 6;
       style['maxWidth'] = maxWidth;
@@ -60,7 +61,7 @@ class PomodoroClock extends React.Component {
     }
 
     return(
-      <div style={style}>
+      <div id='pomodoroClock' style={style}>
         <div id='clockContainer' style={clockContainerStyle}>
           <Top />
           <Clock />

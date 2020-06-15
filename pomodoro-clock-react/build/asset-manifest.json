@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/fcc-challenges/pomodoro-clock-react/build/static/css/main.1b8ac635.chunk.css",
-    "main.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/main.56d846f0.chunk.js",
-    "main.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/main.56d846f0.chunk.js.map",
+    "main.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/main.4e34ae4f.chunk.js",
+    "main.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/main.4e34ae4f.chunk.js.map",
     "runtime-main.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/runtime-main.601eb45a.js",
     "runtime-main.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/runtime-main.601eb45a.js.map",
-    "static/js/2.a6220f55.chunk.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.a6220f55.chunk.js",
-    "static/js/2.a6220f55.chunk.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.a6220f55.chunk.js.map",
+    "static/js/2.966a2449.chunk.js": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.966a2449.chunk.js",
+    "static/js/2.966a2449.chunk.js.map": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.966a2449.chunk.js.map",
     "index.html": "/fcc-challenges/pomodoro-clock-react/build/index.html",
-    "precache-manifest.26aca98821ee4880d329b4892a380648.js": "/fcc-challenges/pomodoro-clock-react/build/precache-manifest.26aca98821ee4880d329b4892a380648.js",
+    "precache-manifest.32c2e006ddde6520f555fbe5a9dcacf3.js": "/fcc-challenges/pomodoro-clock-react/build/precache-manifest.32c2e006ddde6520f555fbe5a9dcacf3.js",
     "service-worker.js": "/fcc-challenges/pomodoro-clock-react/build/service-worker.js",
     "static/css/main.1b8ac635.chunk.css.map": "/fcc-challenges/pomodoro-clock-react/build/static/css/main.1b8ac635.chunk.css.map",
-    "static/js/2.a6220f55.chunk.js.LICENSE.txt": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.a6220f55.chunk.js.LICENSE.txt",
+    "static/js/2.966a2449.chunk.js.LICENSE.txt": "/fcc-challenges/pomodoro-clock-react/build/static/js/2.966a2449.chunk.js.LICENSE.txt",
     "static/media/BeepSound.ogg": "/fcc-challenges/pomodoro-clock-react/build/static/media/BeepSound.049fe0d0.ogg"
   },
   "entrypoints": [
     "static/js/runtime-main.601eb45a.js",
-    "static/js/2.a6220f55.chunk.js",
+    "static/js/2.966a2449.chunk.js",
     "static/css/main.1b8ac635.chunk.css",
-    "static/js/main.56d846f0.chunk.js"
+    "static/js/main.4e34ae4f.chunk.js"
   ]
 }
